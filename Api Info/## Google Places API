@@ -1,6 +1,177 @@
-## Google Places API
+## Google Places API ( AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0 )
  // https://developers.google.com/maps/documentation/embed/
  -- iframe format
+ https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=park&key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0
+
+ {
+  "html_attributions": [],
+  "results": [
+    {
+      "geometry": {
+        "location": {
+          "lat": -33.8658495,
+          "lng": 151.1958561
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+      "id": "a4d68c2fd5ab56d686de82ac49bc69b43d50c032",
+      "name": "Metcalfe Park",
+      "photos": [
+        {
+          "height": 1232,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/105932078588305868215/photos\">Maksym Kozlenko</a>"
+          ],
+          "photo_reference": "CoQBcwAAAGVbQ5oGXubhinEKb3JrsqFceQPew0b98ffseTTEr81oLbHFYoY9YEaiffmMkNTn-RmyXVC6SYDdzbt-2MN12WR1Bsp2nAgJaldWQwPtvvp99LGvtvLnMeMa9X2WYFGILuzcDNb9Gf0sqrDx2iTcN1Z6vvIl-oknR9CURjF-AImpEhBkc0dDjFZ0YTLJapKYTUY_GhTOhrEnpavngU8I6XZ4hROcKucBvA",
+          "width": 2554
+        }
+      ],
+      "place_id": "ChIJaac90jeuEmsR0Evy-Wh9AQ8",
+      "rating": 4.3,
+      "reference": "CmRgAAAAZ87qK1zDYvtCPF1P4wUQ7Kqp_EZqZZeS9-zgF9ATU5qzuUDn3NljFlKEgX3ghiUMLB1cS9rjyA2xkZWUtvXJ1TgBuanItb7zrGx7XJikBBJd-fJXk8Yqy_GlJRzJWFYGEhDmcM1Z-Q_uhWkhG-9kLC80GhT61SLf6cd46pHQN-xyalwgBnkY8g",
+      "scope": "GOOGLE",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity": "Pyrmont"
+    },
+    {
+      "geometry": {
+        "location": {
+          "lat": -33.86399249999999,
+          "lng": 151.1970399
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+      "id": "36062a37400be080f019a9a2b0f42deb27e610d8",
+      "name": "Ballaarat Park",
+      "photos": [
+        {
+          "height": 2448,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/104932911791421343127/photos\">Srivatsa Iyengar</a>"
+          ],
+          "photo_reference": "CoQBcwAAAGxOrPlc515l4Y3LnLux8pAFc7mXuDAPEacpTjFYxlKIT1PopbL05WUBhlXwl6J1vXtYSq_OVK2L1EAJl38urL-QNfFBkS-BhwjX7k1iRG-kyPDuehyvz-R_hzHUzAnbAKc4AE_ybWOiTzqkqwKspC5jTg4CY7fqBCZveNuoRvQaEhBOwH1GGGaoVuoaS6h6cDTrGhTZRCL1vpDbO5fwEdvnaUoWtuLgWw",
+          "width": 3264
+        }
+      ],
+      "place_id": "ChIJCz9SQkiuEmsRsPTy-Wh9AQ8",
+      "rating": 4.3,
+      "reference": "CnRhAAAASWhRFvwfVumu2YRPUaw85zr9WryIQo1-2thxliQ1kJwI-BwKp1QVc6sFIx9XMIP8OA3N4KSYFmA8dRjEMtBQa0MloPGeTSDyAJZRQBSDn_9yM3IhJifAb-4KQ7Nm1cqAdsk0tuUqUkC5hFdPEf_6_xIQwgMD9JFp5cZKoai__EpOvRoUxP34upWjKVk1z8gYQ4ZaM0iDhE4",
+      "scope": "GOOGLE",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity": "Darling Island Road, Pyrmont"
+    },
+    {
+      "geometry": {
+        "location": {
+          "lat": -33.86342,
+          "lng": 151.1925442
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+      "id": "c58c2c99069b7134036db2149fdea77cd91379de",
+      "name": "Pirrama Park",
+      "opening_hours": {
+        "open_now": true,
+        "weekday_text": []
+      },
+      "photos": [
+        {
+          "height": 2448,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/118410684014024830328/photos\">Michael Mak</a>"
+          ],
+          "photo_reference": "CoQBcwAAAK0yw5mPR9dKLvC2gMkW8Re3sdxNfC9iQ2bCeSM1h8spEbzQofo6UZrHnxa-PRTpWKKrIKPcJxEXsQWzqncz-2L4ElvHnr6IH7CPfSdGN-2uCTIlFbhUL_BcUrdIyK3Zt9t_IeIR85J07ZpjDUAwy7aJBZF827covKkkXzMSTUBxEhCJAsZOESL3CVxpDeJDz6E5GhS5AlSQRNfWy-QIQo5UqyZ9DMtnKQ",
+          "width": 3264
+        }
+      ],
+      "place_id": "ChIJJfzRpjeuEmsRkn00iOGbF-U",
+      "rating": 4.5,
+      "reference": "CmRgAAAAO430JoBd15I1-8T_tjR8d829VNBuV8jHmcad94se8AbxSprizZ2DF3TuS8D1fHLc97cS_ZlLsH442lbr4gKWZJYF8hEqxZ91Rexmx9Ph16Hivx6DJ_Tf4QtezDOQ0EM1EhA5AVuPRpKZvWiinNpF2cT2GhR5CwDvrgIzkKg-mm8rwKFGI02UYQ",
+      "scope": "GOOGLE",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity": "20 Pirrama Road, Pyrmont"
+    },
+    {
+      "geometry": {
+        "location": {
+          "lat": -33.86812,
+          "lng": 151.1969113
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+      "id": "e5a0f70cb82239bfa4b648b7c70326c93d8ce2a3",
+      "name": "Pyrmont Bay Park",
+      "photos": [
+        {
+          "height": 2448,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/118410684014024830328/photos\">Michael Mak</a>"
+          ],
+          "photo_reference": "CoQBcwAAAEmnUaydGt63eYf4ygqN-ZILcyI361Pe7Tdwmj7Q700Why2IQADg3olMdawoY1T8fiJ5gGQ0GvJLW_rI3f860uqtUyU6NqIIrlhk8G2Q4CdSOtzSKnuPdEs3XCcOfmwszWqoGFnMSMuv_57QXGjLDlDvFiCRMwUFpukco7kWhyi2EhD3O2fjkO27RR9uZRLgHNTVGhQ0YI3Pq4SK10jw2NoJmS1qZfbAxg",
+          "width": 3264
+        }
+      ],
+      "place_id": "ChIJGc4QODauEmsRPyDYYycA4Yg",
+      "rating": 4.2,
+      "reference": "CnRkAAAAs4UHP2D-amiHl7DCO9RDJbgz6qI4w-7_hKdEIqF2oVdLuikoNxa2QUveWKQ6w8SuWaDJ3jOwxLpR7q3oKpp_CjG-1EByOTAxbTfbhGt2tEB2B_xNik6_NGUaPTI7MiF2Gdj3kr62VQk8E1nLKu2VJxIQwhFxYr3kp-Ov3vucl8DO0RoU_0yQbmT-KhX5NUYnpZgCxvc8hp8",
+      "scope": "GOOGLE",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity": "NSW"
+    },
+    {
+      "geometry": {
+        "location": {
+          "lat": -33.8640563,
+          "lng": 151.192578
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+      "id": "a11203b5b295fbea044d0878584e3063d5d4fbad",
+      "name": "Giba Park",
+      "opening_hours": {
+        "open_now": true,
+        "weekday_text": []
+      },
+      "photos": [
+        {
+          "height": 1746,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/118274368335647927024/photos\">Hong N</a>"
+          ],
+          "photo_reference": "CoQBcwAAAD6Y_CDZTYluLIQw9OQg-pHDPeC6MtDulobliwwMBvoNbvAqbtiJn5vkPVbc5UxkOek_D-XdjztGl5IGMceJspyRFHYAEih4LLXKl-tzlP1r4cLZ515ioapPAlMYY2R0uO0zPO7euIMHbIG0a5EyT4huli37_1v54yWBl1SnVXl_EhAEPXpO3cnaA5ddKGxO6OOpGhQP1VG92I47X2axJuSEzely-CZg1g",
+          "width": 3104
+        }
+      ],
+      "place_id": "ChIJRaP4AkquEmsRUPLx-Wh9AQ8",
+      "rating": 4.4,
+      "reference": "CmRcAAAACpAou_KXH1v50rx02xKTCvh4Dg_w77322p-aJyADtupb-H-O08MsQ3WczZZahztrpHduPuFi628BsCVxU4_AWOfNrOMNx0KVY8mbDFyjdU3BEDdY7Fo2j9oFWfzeJLd8EhBf93J7lecppH_0SWqNPOEaGhSMyQOaoSYVkisteMVHvBW_uYP72Q",
+      "scope": "GOOGLE",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity": "Pyrmont"
+    }
+  ],
+  "status": "OK"
+}
 
 
 
