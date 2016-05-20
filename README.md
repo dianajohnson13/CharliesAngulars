@@ -1,6 +1,6 @@
 # Greenfield Park
 
-> Pithy project description
+> Strong suave project description
 
 ## Team
 
