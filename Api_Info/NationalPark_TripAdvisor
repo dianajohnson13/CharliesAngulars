@@ -19,3 +19,8 @@ Three most recent review snippets of 200 characters in length, including author 
 https://developer-tripadvisor.com/content-api/documentation/location/
 
 ///////////
+
+///Open Weather API  LatLong or Zipcode
+
+api.openweathermap.org/data/2.5/weather?lat=35&lon=139
+api.openweathermap.org/data/2.5/weather?zip=94040,us

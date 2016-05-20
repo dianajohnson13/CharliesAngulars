@@ -49,3 +49,46 @@ html {
     padding: 8px 25px;
     width: 200px;
 }
+div, span{
+    border: 1px solid black;
+}
+#totalContainer{
+    height:100%;
+}
+#totalDisplayContainer{
+    float:right;
+    width: 68%;
+}
+#filterMapContainer{
+    height: 100vh;
+    float:left;
+    width:30%;
+    -width: 250px;
+    max-width:300px;
+}
+#filterContent ul{
+    -list-style-type: none;
+    margin:0;
+    padding: 0; 
+}
+
+#filterContent{
+    height: 50vh;
+    overflow: scroll;
+}
+#descriptionContainer{
+    height: 50%;
+    width:100%;
+}
+#descriptionContent{
+    height: 30VH;
+    width: 100%;
+    overflow: scroll;
+
+}
+#mapButton{
+    float:right;
+    border-radius:25px;
+}
+
+

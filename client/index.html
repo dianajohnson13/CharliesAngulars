@@ -1,31 +1,100 @@
 <!DOCTYPE html>
 <html ng-app="mainPage">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Green Field Park</title>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
-      <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-      <script src="js/controllers/main.js"></script>
-      <script src="app.js"></script>
-   </head>
-   <body ng-controller="mainController">
-      <h1> {{test}} </h1>
-      <div>
-         <div ng-hide="searchStatus">
-            <div id="popup">
-               <div id="searchBox">
-                  <label>Seach For Park By Location or Name</label>
-                  <input id="location" type="text" name="searchText" placeholder="ex: San Francisco, CA or Yosemite">
-                  <button id="searchButton" ng-click="submitSearch()">Seach</button>
-               </div>
-            </div>
-            <div ng-show="searchStatus" id="detailDisplay">
-               <div id="map"></div>
-               <script src='API_test.js'></script>
-            </div>
-         </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parks and Exploration</title>
+    <meta name="description" content="A Resource for park info">
+    <meta name="Charlies Angulars" content="CharliesAngular">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+
+    <script src="app/homescreen/homescreen.js"></script>
+    <script src="app.js"></script>
+    <script src='maps_api.js'></script>
+  </head>
+  <body ng-controller="mainController">
+    <h1> {{test}} </h1>
+    <div>
+      <div ng-hide="searchStatus">
+        <div id="popup">
+          <div id="searchBox">
+            <label>Search For Park By Location or Name</label>
+            <input id="location" type="text" name="searchText"  ng-model="searchCriteria" placeholder="ex: San Francisco, CA or Yosemite">
+            <button id="searchButton" ng-click="submitSearch()">Search</button>
+          </div>
+        </div>
       </div>
-   </body>
+        <div ng-show="searchStatus" id="detailDisplay">
+          <span id="logo"> LOGO </span>
+          <div id="totalContainer">
+            <span id="filterMapContainer">
+              <div id="filterContainer" ngcontroller="filterController"> <!--Removed Dash from NG_controller-->
+                <div id="filterTitle">
+                  <p>{{searchText}}</p>
+                </div>
+                <div id="filterContent" >
+                  <ul ng-repeat="loc as locations"> <!-- sort by distance then rating-->
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                    <li>
+                      <div>{{loc.name}}</div>
+                      <div>{{loc.address}}</div>
+                      <div>{{loc.rating}}</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="map" ngcontroller="mapController">
+                <div id="map"></div>
+                <span id="mapButton">+</span>
+              </div>
+            </span>
+            <span id="totalDisplayContainer">
+              <div id="descriptionContainer">
+                <p>Description</p>
+                <div id="descriptionContent">{{description}}</div>
+              </div>
+              <div id="tabContainer"> TABS</div>
+            </span>
+          </div>
+        </div>
+    </div>
+  </body>
 </html>
