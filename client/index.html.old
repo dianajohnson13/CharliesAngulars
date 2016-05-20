@@ -4,16 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
   <title>Green Field Park</title>
   <link rel="stylesheet" type="text/css" href="style.css"/>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -26,8 +16,5 @@
   <div>
     <h1> {{test}} </h1>
   </div>
-  <div id="map"></div>
-	<script src='API_test.js'></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
 </body>
 </html>

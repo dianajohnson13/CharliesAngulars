@@ -6,7 +6,8 @@ var methodOverride = require('method-override');
 
 var app = express();
 //mongodb to be connected once deployed with URI
-mongoose.connect('mongodb://localhost/database');    
+
+//mongoose.connect('mongodb://localhost/database');    
 
 app.use(express.static(__dirname + '/client'));               
 app.use(morgan('dev'));                                        
@@ -31,7 +32,7 @@ var mainRouteModel = mongoose.model('mainRouteModel', {
 //application under here
 
 app.get('*', function(req, res) {
-  res.sendFile('./client/index.html'); // load the single view file 
+  res.sendFile('./client/index/html'); // load the single view file 
 });
 
 //listen(start app with node server.js)
