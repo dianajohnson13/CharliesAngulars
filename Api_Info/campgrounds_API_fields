@@ -1,0 +1,16 @@
+
+facilityName
+faciltyPhoto
+Latitude
+Longitude
+sitesWithAmps
+sitesWithPetsAllowed
+sitesWithSewerHookup 
+sitesWithWaterHookup
+sitesWithWaterfront
+state
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resultset count="1" pname="Burlingame State Park" pstate="RI" resultType="campgrounds">
+<result agencyIcon="" agencyName="" availabilityStatus="N" contractID="RI" contractType="STATE" facilityID="252711" facilityName="Burlingame State Park" faciltyPhoto="/webphotos/RI/pid252711/0/80x53.jpg" latitude="41.3891667" longitude="-71.6980556" regionName="" reservationChannel="" shortName="2711" sitesWithAmps="N" sitesWithPetsAllowed="Y" sitesWithSewerHookup="N" sitesWithWaterHookup="N" sitesWithWaterfront="" state="RI"/>
+</resultset>
