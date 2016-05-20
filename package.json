@@ -1,0 +1,30 @@
+{
+  "name": "charlies_angulars",
+  "version": "1.0.0",
+  "description": "find your next park",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharliesAngulars/CharliesAngulars.git"
+  },
+  "author": "CharliesAngulars",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharliesAngulars/CharliesAngulars/issues"
+  },
+  "homepage": "https://github.com/CharliesAngulars/CharliesAngulars#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "grunt": "^1.0.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.17",
+    "morgan": "^1.7.0",
+    "q": "^1.4.1",
+    "request": "^2.72.0"
+  }
+}
