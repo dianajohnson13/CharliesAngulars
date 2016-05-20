@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html ng-app="mainPage">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-  <title>Green Field Park</title>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-  <script src="js/controllers/main.js"></script>
-  <script src="app.js"></script>
-
-</head>
-<body ng-controller="mainController">
-  <div>
-    <h1> {{test}} </h1>
-  </div>
-  <div id="map"></div>
-	<script src='API_test.js'></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
-</body>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Green Field Park</title>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
+      <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+      <script src="js/controllers/main.js"></script>
+      <script src="app.js"></script>
+   </head>
+   <body ng-controller="mainController">
+      <h1> {{test}} </h1>
+      <div>
+         <div ng-hide="searchStatus">
+            <div id="popup">
+               <div id="searchBox">
+                  <label>Seach For Park By Location or Name</label>
+                  <input id="location" type="text" name="searchText" placeholder="ex: San Francisco, CA or Yosemite">
+                  <button id="searchButton" ng-click="submitSearch()">Seach</button>
+               </div>
+            </div>
+            <div ng-show="searchStatus" id="detailDisplay">
+               <div id="map"></div>
+               <script src='API_test.js'></script>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
