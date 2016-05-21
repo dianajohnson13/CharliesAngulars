@@ -1,7 +1,7 @@
-angular.module('mainPage', [])
+// angular.module('mainPage', [])
 
-.controller("mainController", function($scope) {
-  $scope.test = "Hello World!!!!";
+// .controller("mainController", function($scope) {
+//   $scope.test = "Hello World!!!!";
 
   
-});
+// });
