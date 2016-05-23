@@ -31,10 +31,6 @@ var mainRouteModel = mongoose.model('mainRouteModel', {
 
 //application under here
 
-app.get('*', function(req, res) {
-  res.sendFile('./client/index/html'); // load the single view file 
-});
-
 //listen(start app with node server.js)
 var port = process.env.PORT || 8080;
 
