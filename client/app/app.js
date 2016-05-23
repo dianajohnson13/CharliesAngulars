@@ -1,7 +1,5 @@
-// angular.module('mainPage', [])
-
-// .controller("mainController", function($scope) {
-//   $scope.test = "Hello World!!!!";
-
-  
-// });
+angular.module('parksAndEx', [
+  'parksAndEx.homescreen',
+  'parksAndEx.services'
+])
+// add config and run here if either is needed...
