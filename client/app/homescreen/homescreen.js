@@ -1,11 +1,12 @@
-angular.module('mainPage', [])
+angular.module('parksAndEx.homescreen', [])
 
-.controller("mainController", function($scope, mainFactory) {
+.controller('homescreenController', function($scope, homescreenFactory, $location) {
   //$scope.test = mainFactory.getText();
-  $scope.searchStatus = true;
+  $scope.searchStatus = false;
 
-  $scope.submitSearch = function(){
-  	var filtered = mainFactory.filter("  death valley");
+  $scope.submitSearch = function(input){
+    console.log(input)
+  	var filtered = homescreenFactory.filter("  death valley");
   	if(filtered){
 	  	$scope.searchStatus = true;
 	  	$scope.text = filtered;
@@ -17,7 +18,7 @@ angular.module('mainPage', [])
 
   }
   
-}).factory('mainFactory', function(){
+}).factory('homescreenFactory', function(){
 
 	var filterText = function(text){
 		var filteredText = text.trim();
