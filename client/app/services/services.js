@@ -1,1 +1,8 @@
-// used for GET and POST requests to the server
+angular.module('parksAndEx.services', [])
+
+.factory('servicesFactory', function($http) {
+  
+  //make calls to our server... 
+  //Michael would build search call here...
+
+})

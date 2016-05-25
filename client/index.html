@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="mainPage">
+<html ng-app="parksAndEx">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,16 +15,17 @@
     <script src="app/homescreen/homescreen.js"></script>
     <script src="app/app.js"></script>
     <script src='assets/maps_api.js'></script>
+    <script src="app/services/services.js"></script>
   </head>
-  <body ng-controller="mainController">
+  <body>
     <h1> {{test}} </h1>
-    <div>
+    <div ng-controller="homescreenController">
       <div ng-hide="searchStatus">
         <div id="popup">
           <div id="searchBox">
             <label>Search For Park By Location or Name</label>
-            <input id="location" type="text" name="searchText"   placeholder="ex: San Francisco, CA or Yosemite">
-            <button id="searchButton" ng-click="submitSearch()">Search</button>
+            <input id="location" type="text" name="searchText" ng-model="searched" placeholder="ex: San Francisco, CA or Yosemite">
+            <button id="searchButton" ng-click="submitSearch(searched)">Search</button>
           </div>
         </div>
       </div>
@@ -37,7 +38,7 @@
                   <p>{{searchText}}</p>
                 </div>
                 <div id="filterContent" >
-                  <ul ngrepeat="loc as locations"> <!-- sort by distance then rating-->
+                  <ul ngrepeat="loc as locations"> <!-- disabled - fix ngrepeat to ng-repeat ; sort by distance then rating-->
                     <li>
                       <div>{{loc.name}}</div>
                       <div>{{loc.address}}</div>
