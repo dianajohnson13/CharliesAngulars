@@ -1,36 +1,46 @@
+angular.module('parksAndEx.googleApi', [])
+.factory('googleApiFactory', function() {
+	var obj = {};
+	
+	obj.callback = callback;
+	obj.createMarker = createMarker;
+	obj.handleAddress = handleAddress;
+	obj.handleLocation = handleLocation;
+	obj.httpGetAsync = httpGetAsync;
+	
+	return obj
+
+})
+
+.controller('googleApiController', function ($scope, googleApiFactory) {
+	$scope.googleApi = googleApiFactory;
+	$scope.locations = [];
+	
+	
+	$scope.googleApi.handleAddress("San Francisco");
+	setTimeout(function() {
+	$scope.locations = results_global;
+	console.log("$scope.locations: ", $scope.locations);
+	$scope.$apply();
+	}, 1000);
+});
+
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 var map;
 var infowindow;
-
-function initMap() {
-
-
-    var pyrmont = {
-        lat: -33.867,
-        lng: 151.195
-    };
-
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: pyrmont,
-        zoom: 15
-    });
-
-    infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-        location: pyrmont,
-        radius: 500,
-        type: ['park']
-    }, callback);
-}
+var results_global;
 
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
+		console.log(results);
+		results_global = results;
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
+		
+		
     }
 }
 
@@ -55,7 +65,8 @@ function handleAddress(input) {
     httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + formattedInput + '&key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0', handleLocation);
 
 }
-handleAddress('Death Valley');
+
+//handleAddress('San Francisco');
 
 function handleLocation(input) {
 
@@ -70,14 +81,14 @@ function handleLocation(input) {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: pyrmont,
-        zoom: 15
+        zoom: 12
     });
 
     infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: pyrmont,
-        radius: 500,
+        radius: 2500,
         type: ['park']
     }, callback);
 
