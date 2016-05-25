@@ -24,10 +24,12 @@ var mainRouteModel = mongoose.model('mainRouteModel', {
   }
 });
 
-
-
 //routes go under here
 
+
+// app.get('*', function(req, res) {
+//   res.sendFile('./client/index/html'); // load the single view file 
+// });
 
 //application under here
 
