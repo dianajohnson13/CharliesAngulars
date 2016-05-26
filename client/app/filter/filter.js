@@ -1,9 +1,15 @@
 angular.module('parksAndEx.filter', [])
 .controller('filterController', function ($scope) {
 	$scope.locations = [];
-	handleAddress("San Francisco");
+	handleAddress("Yosemite");
 	function callbackFn(results, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
+		console.log(results);
+		results.map(function(element, index, collection){
+		var lat = element.geometry.location.lat()
+		var lng = element.geometry.location.lng();
+		element.latlong={lat:lat, lng:lng}
+		});
 		console.log(results);
 		$scope.locations = results;
 		$scope.$apply();
@@ -23,12 +29,14 @@ angular.module('parksAndEx.filter', [])
 		  infowindow.open(map, this);
 		});
 	}; 
+	
 	function handleAddress(input) {
 		var formattedInput = input.split(' ').join('%20');
 		httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + formattedInput + '&key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0', handleLocation);
 	};
 	function handleLocation(input) {
 		var inputJSON = JSON.parse(input);
+		console.log(inputJSON);
 		if (!inputJSON.results.length) {
 			return false;
 		}
@@ -41,7 +49,7 @@ angular.module('parksAndEx.filter', [])
 		var service = new google.maps.places.PlacesService(map);
 		service.nearbySearch({
 		  location: location,
-		  radius: 2500,
+		  radius: 25000,
 		  type: ['park']
 		}, callbackFn);
 	};
