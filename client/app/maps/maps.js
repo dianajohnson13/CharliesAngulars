@@ -1,6 +1,6 @@
 angular.module('parksAndEx.maps', [])
     .controller('mapsController', function($scope, mapFactory) {
-    	
+
         $scope.toggleSize = function($event){
         	$("#map").toggleClass("smallMap fullMap");
         	mapFactory.resize();
@@ -43,7 +43,7 @@ angular.module('parksAndEx.maps', [])
         }
     }
 
-    var locationHandler = function(input) {
+    function locationHandler (input) {
         var inputJSON = JSON.parse(input);
         var location = {
             lat: inputJSON.results[0].geometry.location.lat,
