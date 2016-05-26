@@ -3,11 +3,11 @@ angular.module('parksAndEx.weather', [])
 .controller('weatherController', function($scope, weatherFactory) {
   $scope.forecast;
 
-  $scope.getWeather = function() {
-    weatherFactory.requestWeather();
+  $scope.generateWeather = function(lat, lon) {
+    weatherFactory.generateWeather(lat, lon);
   }
 
-  $scope.getWeather() // when should this happen:
+  // when should this happen:
     // whenever someone makes the search - do this from the search data
     // whenever someone chooses a location from the suggested parks
     // whenever the tab is shown...? no because it will already be available
@@ -25,10 +25,10 @@ angular.module('parksAndEx.weather', [])
   var urlTodayStart = 'http://api.openweathermap.org/data/2.5/weather?'
   var urlSevenDayStart = 'http://api.openweathermap.org/data/2.5/forecast/daily?'
   
-  var latitude;  // where am I getting these
-  var longitude;  // where am I getting these
+  var latitude;
+  var longitude;
 
-  var requestWeather = function(lat, lon) {
+  var generateWeather = function(lat, lon) {
     latitude = lat;
     longitude = lon;
 
@@ -58,7 +58,7 @@ angular.module('parksAndEx.weather', [])
   // }
 
   return {
-    requestWeather:requestWeather
+    generateWeather:generateWeather
   }
 });
 
