@@ -14,8 +14,8 @@
  -->
     <script src="app/homescreen/homescreen.js"></script>
     <script src="app/app.js"></script>
-    <script src='assets/maps_api.js'></script>
-    <script src="app/services/services.js"></script>
+    <script src='app/filter/filter.js'></script>
+	<script src="app/services/services.js"></script>
   </head>
   <body>
     <h1> {{test}} </h1>
@@ -33,51 +33,16 @@
           <span id="logo"> LOGO </span>
           <div id="totalContainer">
             <span id="filterMapContainer">
-              <div id="filterContainer" ngcontroller="filterController"> <!--Removed Dash from NG_controller-->
+              <div id="filterContainer" ng-controller="filterController"> <!--Removed Dash from NG_controller-->
                 <div id="filterTitle">
                   <p>{{searchText}}</p>
                 </div>
                 <div id="filterContent" >
-                  <ul ngrepeat="loc as locations"> <!-- disabled - fix ngrepeat to ng-repeat ; sort by distance then rating-->
+                  <ul ng-repeat="loc in locations track by $index"> <!-- sort by distance then rating-->
                     <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
-                    </li>
-                    <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
-                    </li>
-                    <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
-                    </li>
-                    <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
-                    </li>
-                    <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
-                    </li>
-                    <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
-                    </li>
-                    <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
-                    </li>
-                    <li>
-                      <div>{{loc.name}}</div>
-                      <div>{{loc.address}}</div>
-                      <div>{{loc.rating}}</div>
+                      <div>{{$index + 1}}. {{loc.name}}</div>
+                      <div>{{loc.vicinity}}</div>
+                      <div>Rating: {{loc.rating}}</div>
                     </li>
                   </ul>
                 </div>
