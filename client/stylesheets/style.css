@@ -10,8 +10,11 @@ html {
     margin: 0;
     padding: 0;
 }
-#map {
-    height: 100%;
+#mapHolder {
+     height:300px;
+}
+#map{
+    
 }
 #popup {
     margin: 100px auto;
@@ -89,6 +92,20 @@ div, span{
 #mapButton{
     float:right;
     border-radius:25px;
+    position: absolute;
+    z-index: 99999;
+    left: 292px;
+    background: white;
+}
+.fullMap{
+        position: absolute !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.smallMap{
+    height:100%;
+    width:100%;
 }
 
 

@@ -1,15 +1,16 @@
 angular.module('parksAndEx.homescreen', [])
 
-.controller('homescreenController', function($scope, homescreenFactory, $location) {
+.controller('homescreenController', function($scope, homescreenFactory, mapFactory, $location) {
   //$scope.test = mainFactory.getText();
   $scope.searchStatus = false;
 
   $scope.submitSearch = function(input){
     console.log(input)
-  	var filtered = homescreenFactory.filter("  death valley");
+  	var filtered = homescreenFactory.filter(input);
   	if(filtered){
 	  	$scope.searchStatus = true;
 	  	$scope.text = filtered;
+	  	mapFactory.generate(filtered);
 	  }
 	 else{
 	 	$scope.test = "BAD DATA"
