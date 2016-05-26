@@ -1,5 +1,5 @@
-angular.module('parksAndEx.googleApi', [])
-.controller('googleApiController', function ($scope) {
+angular.module('parksAndEx.filter', [])
+.controller('filterController', function ($scope) {
 	$scope.locations = [];
 	handleAddress("San Francisco");
 	function callbackFn(results, status) {
@@ -29,6 +29,9 @@ angular.module('parksAndEx.googleApi', [])
 	};
 	function handleLocation(input) {
 		var inputJSON = JSON.parse(input);
+		if (!inputJSON.results.length) {
+			return false;
+		}
 		var location = {lat: inputJSON.results[0].geometry.location.lat, lng: inputJSON.results[0].geometry.location.lng};
 		map = new google.maps.Map(document.getElementById('map'), {
 		  center: location,

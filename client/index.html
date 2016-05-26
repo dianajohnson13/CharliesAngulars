@@ -14,7 +14,7 @@
  -->
     <script src="app/homescreen/homescreen.js"></script>
     <script src="app/app.js"></script>
-    <script src='app/maps/maps_api.js'></script>
+    <script src='app/filter/filter.js'></script>
 	<script src="app/services/services.js"></script>
   </head>
   <body>
@@ -33,7 +33,7 @@
           <span id="logo"> LOGO </span>
           <div id="totalContainer">
             <span id="filterMapContainer">
-              <div id="filterContainer" ng-controller="googleApiController"> <!--Removed Dash from NG_controller-->
+              <div id="filterContainer" ng-controller="filterController"> <!--Removed Dash from NG_controller-->
                 <div id="filterTitle">
                   <p>{{searchText}}</p>
                 </div>
