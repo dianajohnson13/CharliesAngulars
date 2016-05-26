@@ -12,10 +12,16 @@
     <script src="lib/angular/angular.js"></script>
 <!--     <script src="lib/jquery/src/jquery.js"></script>
  -->
+ <script src="app/app.js"></script>
     <script src="app/homescreen/homescreen.js"></script>
-    <script src="app/app.js"></script>
+    
     <script src='app/filter/filter.js'></script>
 	<script src="app/services/services.js"></script>
+
+<!--     <script src='assets/maps_api.js'></script>
+ -->    
+    <script src="app/maps/maps.js"></script>
+
   </head>
   <body>
     <h1> {{test}} </h1>
@@ -47,9 +53,10 @@
                   </ul>
                 </div>
               </div>
-              <div id="map" ngcontroller="mapController">
-                <div id="map"></div>
-                <span id="mapButton">+</span>
+              <div id="mapHolder" ng-controller="mapsController">
+                <span id="mapButton" ng-click="toggleSize($event)">+</span>
+                <div id="map" class="smallMap"></div>
+                
               </div>
             </span>
             <span id="totalDisplayContainer">
