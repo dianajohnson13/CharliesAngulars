@@ -1,5 +1,6 @@
 angular.module('parksAndEx.maps', [])
     .controller('mapsController', function($scope, mapFactory) {
+    	
         $scope.toggleSize = function($event){
         	$("#map").toggleClass("smallMap fullMap");
         	mapFactory.resize();
@@ -8,9 +9,10 @@ angular.module('parksAndEx.maps', [])
 
 .factory('mapFactory', function($http) {
 
-      function resize(){
+    function resize(){
       	google.maps.event.trigger(map, "resize");
-      }
+    }
+
     function httpGetAsync(theUrl, callback) {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
@@ -27,7 +29,6 @@ angular.module('parksAndEx.maps', [])
             map: map,
             position: place.geometry.location
         });
-
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent(place.name);
             infowindow.open(map, this);
@@ -41,6 +42,7 @@ angular.module('parksAndEx.maps', [])
             }
         }
     }
+
     var locationHandler = function(input) {
         var inputJSON = JSON.parse(input);
         var location = {
@@ -60,15 +62,15 @@ angular.module('parksAndEx.maps', [])
         }, callback);
 
     }
-    var generateMap = function(searchInput) {
-    	
-    		var url = ["https://maps.googleapis.com/maps/api/geocode/json?address=",
+
+    function generateMap(searchInput) {
+    	var url = ["https://maps.googleapis.com/maps/api/geocode/json?address=",
         "&key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0"];
         var formatInput = formatSearch(searchInput, url);
         httpGetAsync(formatInput, locationHandler);
     }
 
-    var formatSearch = function(unformatted, url) {
+    function formatSearch(unformatted, url) {
         var formatted = url[0] + unformatted.trim().split(' ').join('%20') + url[1];
         return formatted;
     }
@@ -76,4 +78,4 @@ angular.module('parksAndEx.maps', [])
     return {generate: generateMap,
     		resize: resize};
 
-})
+});
