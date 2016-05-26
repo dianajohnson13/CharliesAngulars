@@ -4,13 +4,11 @@ angular.module('parksAndEx.filter', [])
 	handleAddress("Yosemite");
 	function callbackFn(results, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
-		console.log(results);
 		results.map(function(element, index, collection){
 		var lat = element.geometry.location.lat()
 		var lng = element.geometry.location.lng();
 		element.latlong={lat:lat, lng:lng}
 		});
-		console.log(results);
 		$scope.locations = results;
 		$scope.$apply();
 		  for (var i = 0; i < results.length; i++) {
@@ -36,7 +34,6 @@ angular.module('parksAndEx.filter', [])
 	};
 	function handleLocation(input) {
 		var inputJSON = JSON.parse(input);
-		console.log(inputJSON);
 		if (!inputJSON.results.length) {
 			return false;
 		}
