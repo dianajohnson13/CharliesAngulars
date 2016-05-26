@@ -2,12 +2,15 @@ angular.module('parksAndEx.filter', [])
 .controller('filterController', function ($scope) {
 	$scope.locations = [];
 	handleAddress("Yosemite");
+	$scope.rerenderAll = function (param1, param2) {
+		console.log(param1, param2);
+	}
 	function callbackFn(results, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
 		results.map(function(element, index, collection){
 		var lat = element.geometry.location.lat()
 		var lng = element.geometry.location.lng();
-		element.latlong={lat:lat, lng:lng}
+		element.latlng={lat:lat, lng:lng}
 		});
 		$scope.locations = results;
 		$scope.$apply();

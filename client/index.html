@@ -46,7 +46,7 @@
                 <div id="filterContent" >
                   <ul ng-repeat="loc in locations track by $index"> <!-- sort by distance then rating-->
                     <li>
-                      <div ngclick = "rerenderAll(LAT,LNG)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. {{loc.name}}</div>
+                      <div ng-click = "rerenderAll(loc.latlng.lat, loc.latlng.lng)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. {{loc.name}}</div>
                       <div>{{loc.vicinity}}</div>
                       <div>Rating: {{loc.rating}}</div>
                     </li>
