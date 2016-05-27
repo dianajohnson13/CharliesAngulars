@@ -10,20 +10,18 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
     <script src="lib/angular/angular.js"></script>
+
 <!--     <script src="lib/jquery/src/jquery.js"></script>
  -->
- <script src="app/app.js"></script>
+    <script src="app/app.js"></script>
     <script src="app/homescreen/homescreen.js"></script>
     
     <script src='app/filter/filter.js'></script>
     <script src='app/description/description.js'></script>
-	<script src="app/services/services.js"></script>
-<script src="assets/park_category.js"></script>
-<!--     <script src='assets/maps_api.js'></script>
- 
- -->     
+	   <script src="app/services/services.js"></script>
+    <script src="assets/park_category.js"></script>
+    <script src="app/weather/weather.js"></script>
     <script src="app/toggleNavbar/toggleNavbar.js"></script>
-
  
   </head>
   <body>
@@ -66,49 +64,39 @@
               <div id="descriptionContainer" ng-controller="descriptionController">
                 <p>Description</p>
                 <div id="descriptionContent">{{description}}</div>
+
+            </div>
+            <div id="tabContainer" ng-controller="toggleNavbarController">
+              <div id="navbar">
+                <ul id="navbarUl">
+                  <li class="navbarLi" ng-click="tab1 = !tab1">Current Weathers</li>
+                  <li class="navbarLi" ng-click="tab2 = !tab2">Forecast</li>
+                  <li class="navbarLi" ng-click="tab3 = !tab3">Reviews</li>
+                  <li class="navbarLi" ng-click="tab4 = !tab4">New Features1</li>
+                  <li class="navbarLi" ng-click="tab5 = !tab5">New Features2</li>
+                </ul>
               </div>
+
              <div id="tabContainer">
-                <div id="tabs" ng-controller="TabsCtrl">
-                  <ul id="tabUl">
-                    <li id="tabLi" ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</li>
-                  </ul>
-                  <div id="mainView">
-                    <div ng-include="currentTab"></div>
-                  </div>
-                </div>
-                <script type="text/ng-template" id="one.tpl.html">
-                  <div id="tabOne">
-                    <h1>Put your awesome contents here1</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="two.tpl.html">
-                  <div id="tabTwo">
-                    <h1>Put your awesome contents here2</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="three.tpl.html">
-                  <div id="tabThree">
-                    <h1>Put your awesome contents here3</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="four.tpl.html">
-                  <div id="tabFour">
-                    <h1>Put your awesome contents here4</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="five.tpl.html">
-                  <div id="tabFive">
-                    <h1>Put your awesome contents here5</h1>
-                  </div>
-                </script>
+              <div id="weather" ng-controller="weatherController" ng-show="tab1">
+                <h3>Just a place holder for your awesome contents1</h3>
               </div>
-            </span>
-          </div>
+              <div id="featureContent2" ng-show="tab2">
+                <h3>Just a place holder for your awesome contents2</h3>
+              </div>
+              <div id="featureContent3" ng-show="tab3">
+                <h3>Just a place holder for your awesome contents3</h3> 
+              </div>
+              <div id="featureContent4" ng-show="tab4">
+                <h3>Just a place holder for your awesome contents4</h3> 
+              </div>
+              <div id="featureContent5" ng-show="tab5">
+                <h3>Just a place holder for your awesome contents5</h3> 
+              </div>
+            </div>
+          </span>
         </div>
+      </div>
     </div>
   </body>
 </html>
