@@ -1,8 +1,8 @@
 angular.module('parksAndEx.filter', [])
 
-.controller('filterController', function ($scope, filterFactory) {
+.controller('filterController', function ($scope,$rootScope, filterFactory) {
 	$scope.$on('initial-generate', function(event, args) {
-    	filterFactory.generate(args, $scope);
+    	filterFactory.generate(args, $scope, $rootScope);
 	});
 	$scope.rerenderAll = function (param1, param2) {
 		console.log(param1, param2);
@@ -13,10 +13,11 @@ angular.module('parksAndEx.filter', [])
         }
 	
 }).factory('filterFactory', function($http) {
-	    function resize(){
+	function resize(){
       	google.maps.event.trigger(map, "resize");
     }
  	var $scope = null;
+ 	var $rootScope = null;
 	function callbackFn(results, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
 		results.map(function(element, index, collection){
@@ -25,6 +26,8 @@ angular.module('parksAndEx.filter', [])
 		element.latlng={lat:lat, lng:lng}
 		});
 		$scope.locations = results;
+		$rootScope.$broadcast('list-set', results);
+		console.log(results);
 		$scope.$apply();
 		  for (var i = 0; i < results.length; i++) {
 			createMarker(results[i]);
@@ -43,8 +46,9 @@ angular.module('parksAndEx.filter', [])
 		});
 	}; 
 
-	function handleAddress(input, scope) {
+	function handleAddress(input, scope, rootScope) {
 		$scope = scope;
+		$rootScope = rootScope;
 		var formattedInput = input.split(' ').join('%20');
 		httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + formattedInput + '&key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0', handleLocation);
 	};

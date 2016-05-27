@@ -16,8 +16,9 @@
     <script src="app/homescreen/homescreen.js"></script>
     
     <script src='app/filter/filter.js'></script>
+    <script src='app/description/description.js'></script>
 	<script src="app/services/services.js"></script>
-
+<script src="assets/park_category.js"></script>
 <!--     <script src='assets/maps_api.js'></script>
    
     <script src="app/maps/maps.js"></script>
@@ -60,7 +61,7 @@
               </div>
             </span>
             <span id="totalDisplayContainer">
-              <div id="descriptionContainer">
+              <div id="descriptionContainer" ng-controller="descriptionController">
                 <p>Description</p>
                 <div id="descriptionContent">{{description}}</div>
               </div>
