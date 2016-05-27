@@ -10,8 +10,10 @@ angular.module('parksAndEx.weather', [])
 
   $scope.$on('todaysWeather', function(event, args) {
     $scope.todaysWeather = args;
-    console.log(args)
-    //args currently contains just the current temp
+  });
+
+   $scope.$on('sevenDayForecast', function(event, args) {
+    $scope.sevenDayForecast = args.forecast;
   });
 
   $scope.generateWeather(37.77, -122.419); //hardcoded...
@@ -30,11 +32,10 @@ angular.module('parksAndEx.weather', [])
     longitude = lon;
 
     httpGetAsync(setUrl(urlTodayStart), handleTodaysForecast);
-    //httpGetAsync(setUrl(urlSevenDayStart), handleSevenDayForecast);
+    httpGetAsync(setUrl(urlSevenDayStart), handleSevenDayForecast);
   }
 
   function handleTodaysForecast(resp){
-    console.log('today', resp);
     $rootScope.$broadcast('todaysWeather', { 
       currTemp: Math.round(kelvinToFahrenheit(resp.main.temp)),
       highTemp: Math.round(kelvinToFahrenheit(resp.main.temp_max)),
@@ -45,9 +46,21 @@ angular.module('parksAndEx.weather', [])
   }
 
   function handleSevenDayForecast(resp){
-    console.log('sevenday', resp);
-    //for each:  day, format date, high temp, low temp, description, icon
-        // put all of these in a forcast obj
+    var forecast = {};
+    var allDays = resp.list;
+    for (var i = 1; i < resp.list.length; i++) {
+      var today = allDays[i];
+      forecast[i] =  {
+        date: formatDate(today.dt), /// FINISH THIS FUNCTION
+        highTemp: Math.round(kelvinToFahrenheit(today.temp.max)),
+        lowTemp: Math.round(kelvinToFahrenheit(today.temp.min)),
+        description: today.weather[0].description,
+        icon: today.weather[0].icon,
+      }
+    }
+    $rootScope.$broadcast('sevenDayForecast', {
+      forecast: forecast
+    });
   }
 
   function httpGetAsync(url, callback) {
@@ -70,10 +83,14 @@ angular.module('parksAndEx.weather', [])
     return (temp * 9/5) - 459.67;
   }
 
-  // function formatDate(timeStamp) {
-  //   var date = new Date(timeStamp * 1000);
-  //   var day = date.getDate();
-  // }
+  function formatDate(timeStamp) { 
+    var daysOfTheWeek = {0:'Sun', 1:'Mon', 2:'Tues', 3:'Wed', 4:'Thurs', 5:'Fri', 6:'Sat'};
+    var date = new Date(timeStamp * 1000);
+    // var dayOfMonth = date.getDate();  OPTIONAL, add in if wanted
+    // var month = date.getMonth();
+    var dayOfWeek = daysOfTheWeek[date.getDay()];
+    return dayOfWeek;
+  }
 
   return {
     generateWeather:generateWeather
