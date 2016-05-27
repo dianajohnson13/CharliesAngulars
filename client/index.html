@@ -19,9 +19,9 @@
 	<script src="app/services/services.js"></script>
 
 <!--     <script src='assets/maps_api.js'></script>
- -->    
+   
     <script src="app/maps/maps.js"></script>
-
+-->  
   </head>
   <body>
     <h1> {{test}} </h1>
@@ -30,16 +30,16 @@
         <div id="popup">
           <div id="searchBox">
             <label>Search For Park By Location or Name</label>
-            <input id="location" type="text" name="searchText" ng-model="searched" placeholder="ex: San Francisco, CA or Yosemite">
-            <button id="searchButton" ng-click="submitSearch(searched)">Search</button>
+            <input id="location" type="text" name="searchText" value="Mission Dolores Park" ng-model="searched" placeholder="ex: San Francisco, CA or Yosemite">
+            <button id="searchButton"  ng-click="submitSearch(searched)">Search</button>
           </div>
         </div>
       </div>
         <div ng-show="searchStatus" id="detailDisplay">
           <span id="logo"> LOGO </span>
           <div id="totalContainer">
-            <span id="filterMapContainer">
-              <div id="filterContainer" ng-controller="filterController"> <!--Removed Dash from NG_controller-->
+            <span id="filterMapContainer" ng-controller="filterController">
+              <div id="filterContainer" > <!--Removed Dash from NG_controller-->
                 <div id="filterTitle">
                   <p>{{searchText}}</p>
                 </div>
@@ -53,7 +53,7 @@
                   </ul>
                 </div>
               </div>
-              <div id="mapHolder" ng-controller="mapsController">
+              <div id="mapHolder" ngcontroller="mapsController">
                 <span id="mapButton" ng-click="toggleSize($event)">+</span>
                 <div id="map" class="smallMap"></div>
                 
