@@ -1,20 +1,25 @@
 <!-- DRAFTING TO BE ADDED TO MAIN HTML PAGE!!! -->
 
-<div id="weather">
-  <div class="today">
-    <div id="details">
-      <span>Forcast - Sunnny</span>
-      <span>High and Low</span>
-      <!-- <span>Location</span>
-      <span>Zipcode</span> -->
-      <span>Date</span>
+<div ng-controller="weatherController">
+  <div id="weather">
+    <div class="today">
+      <div id="details">
+        <span id="currTemp">Current Temperature: </span>
+        <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
+        <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
+        <span id="todayDescript">{{todaysWeather.description}}</span>
+      </div>
+      <div id="image">
+        <!-- insert image from openweather.. or our own.. -->
+      </div>
     </div>
-    <div id="image">
-      <img src="">
-      <!-- insert image from openweather.. or our own.. -->
+    <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
+      <div>
+        <span class="forecastDate">{{day.date}}</span>
+        <span class="forcastedHigh">High: {{day.highTemp}}</span>
+        <span class="forcastedLow">Low: {{day.lowTemp}}</span>
+        <span class="forcastedDescription"></span>
+      </div>
     </div>
-  </div>
-  <div id="forcast">
-    <!-- we can ng-repeat this -->
   </div>
 </div>
