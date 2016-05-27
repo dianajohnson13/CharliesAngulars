@@ -7,17 +7,7 @@ angular.module('parksAndEx.weather', [])
     weatherFactory.generateWeather(lat, lon);
   }
 
-  // when should this happen:
-    // whenever someone makes the search - do this from the search data
-    // whenever someone chooses a location from the suggested parks
-    // whenever the tab is shown...? no because it will already be available
-        //should I get it everytime someone clicks on a different park OR when 
-          //the search is made and then just swap through them as they are clicked on?
-        // I think I could make them just when if the place is clicked on and then 
-          // store them in a hash. Everytime they are needed, just check to see if
-          // the hash contains them for that park (maybe timestamp it too). If its not contained
-          // then I will run through the whole process, otherwise I will just display?
-            //If I did this, I would probably seperate out curr temp and always re-run that
+  $scope.generateWeather(37.77, -122.419); //hardcoded...
 })
 
 .factory('weatherFactory', function() {
@@ -28,15 +18,25 @@ angular.module('parksAndEx.weather', [])
   var latitude;
   var longitude;
 
-  var generateWeather = function(lat, lon) {
+  function generateWeather(lat, lon) {
     latitude = lat;
     longitude = lon;
 
-    httpGetAsync(setUrl(urlTodayStart), doSomethingWithTodaysForecast); // what are these do somethings?
-    //httpGetAsync(setUrl(urlSevenDayStart), doSomethingWithSevenDayForecast);
+    httpGetAsync(setUrl(urlTodayStart), doSomethingWithTodaysForecast);
+    httpGetAsync(setUrl(urlSevenDayStart), doSomethingWithSevenDayForecast);
   }
 
-  var httpGetAsync = function(url, callback) {
+  function doSomethingWithTodaysForecast(resp){
+    // dont worry. I'll change these function names
+    console.log('today', resp);
+  }
+
+  function doSomethingWithSevenDayForecast(resp){
+    // dont worry. I'll change these function names
+    console.log('sevenday', resp);
+  }
+
+  function httpGetAsync(url, callback) {
     var xmlHttp = new XMLHttpRequest();
     
     xmlHttp.onreadystatechange = function() { 
@@ -48,13 +48,17 @@ angular.module('parksAndEx.weather', [])
     xmlHttp.send();
   }
 
-  var setUrl = function(urlStart) {
+  function setUrl(urlStart) {
     return urlStart + 'lat=' + latitude + '&lon=' + longitude + '&APPID=' + apiKey;
   }
 
-  // var formatDate = function(timeStamp) {
+  // function formatDate(timeStamp) {
   //   var date = new Date(timeStamp * 1000);
   //   var day = date.getDate();
+  // }
+
+  // function convertTemp() {
+  //
   // }
 
   return {
