@@ -75,8 +75,27 @@
                     <li class="navbarLi" ng-click="reset(); tab5 = !tab5">New Features2</li>
                   </ul>
                 </div>
-                <div id="weather" ng-controller="weatherController" ng-show="tab1">
-                  <h3>Just a place holder for your awesome contents1</h3>
+                <div id="Weather" ng-controller="weatherController" ng-show="tab1">
+                    <div class="today">
+                      <div id="details">
+                        <span id="currTemp">Current Temperature: {{todaysWeather.currTemp}}</span>
+                        <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
+                        <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
+                        <span id="todayDescript">{{todaysWeather.description}}</span>
+                      </div>
+                      <div id="todaysWeatherIconBox">
+                        <img id="todaysWeatherIcon" src={{todaysWeather.iconLink}}>
+                      </div>
+                    </div>
+                    <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
+                      <div>
+                        <span class="forecastDate">{{day.date}}</span>
+                        <img id="forecastIcon" src={{day.iconLink}}>
+                        <span class="forcastedHigh">High: {{day.highTemp}}</span>
+                        <span class="forcastedLow">Low: {{day.lowTemp}}</span>
+                        <span class="forcastedDescription"></span>
+                      </div>
+                    </div>
                 </div>
                 <div id="featureContent2" ng-show="tab2">
                   <h3>Just a place holder for your awesome contents2</h3>
@@ -90,7 +109,7 @@
                 <div id="featureContent5" ng-show="tab5">
                   <h3>Just a place holder for your awesome contents5</h3> 
                 </div>
-            </div>
+             </div>
           </span>
         </div>
       </div>
