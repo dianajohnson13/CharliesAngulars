@@ -14,6 +14,7 @@ angular.module('parksAndEx.homescreen', [])
 	  }
 	 else{
 	 	$scope.test = "BAD DATA"
+	 	return false;
 	 }
   	//call michaels API
 
