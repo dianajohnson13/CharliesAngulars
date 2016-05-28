@@ -12,11 +12,13 @@ angular.module('parksAndEx.filter', [])
       lng: param2
     });
 	};
-	$scope.toggleSize = function($event){
-  	$("#map").toggleClass("smallMap fullMap");
-  	filterFactory.resize();
-  }
-	
+ 
+	 $scope.toggleSize = function($event){
+        	$("#map").toggleClass("smallMap fullMap");
+        	$("#mapButton").toggleClass("mapButtonMini mapButtonEnlarged");
+        	filterFactory.resize();
+        }
+ 
 	
 }).factory('filterFactory', function($http) {
 	function resize(){
