@@ -70,10 +70,7 @@
              <div id="tabContainer">
                 <div id="tabs" ng-controller="TabsCtrl">
                   <ul id="tabUl">
-                    <li id="tabLi"
-                        ng-repeat="tab in tabs"
-                        ng-class="{active:isActiveTab(tab.url)}"
-                        ng-click="onClickTab(tab)">{{tab.title}}</li>
+                    <li id="tabLi" ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</li>
                   </ul>
                   <div id="mainView">
                     <div ng-include="currentTab"></div>
