@@ -1,6 +1,6 @@
 angular.module('parksAndEx.Tabstoggle', [])
 
-.controller('TabsCtrl', ['$scope', function ($scope) {
+.controller('TabsCtrl', function ($scope) {
     $scope.tabs = [{
       title: 'Weather',
       url: 'one.tpl.html'
@@ -27,4 +27,4 @@ angular.module('parksAndEx.Tabstoggle', [])
     $scope.isActiveTab = function(tabUrl) {
         return tabUrl == $scope.currentTab;
     }
-}]);
+});
