@@ -1,6 +1,6 @@
 angular.module('parksAndEx.homescreen', [])
 
-.controller('homescreenController', function($scope, homescreenFactory, mapFactory, $location) {
+.controller('homescreenController', function($scope, $rootScope, homescreenFactory, $location) {
   //$scope.test = mainFactory.getText();
   $scope.searchStatus = false;
 
@@ -10,13 +10,12 @@ angular.module('parksAndEx.homescreen', [])
   	if(filtered){
 	  	$scope.searchStatus = true;
 	  	$scope.text = filtered;
-	  	mapFactory.generate(filtered);
+	  	$rootScope.$broadcast('initial-generate', filtered);
 	  }
 	 else{
 	 	$scope.test = "BAD DATA"
+	 	return false;
 	 }
-  	//call michaels API
-
   }
   
 }).factory('homescreenFactory', function(){
