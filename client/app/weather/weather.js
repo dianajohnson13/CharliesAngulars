@@ -4,12 +4,6 @@ angular.module('parksAndEx.weather', [])
   $scope.sevenDayForecast;
   $scope.todaysWeather;
 
-  //ADD LISTENER PER WHAT BEN SAID!!!
-
-  $scope.generateWeather = function(lat, lon) {
-    weatherFactory.generateWeather(lat, lon);
-  }
-
   $scope.$on('todaysWeather', function(event, args) {
     $scope.todaysWeather = args;
   });
@@ -18,11 +12,10 @@ angular.module('parksAndEx.weather', [])
     $scope.sevenDayForecast = args.forecast;
   });
 
-  // $scope.$on('list-set', function(event, args) {
-  //   console.log('args', args)
-  // })   /// wait to populate until Ben's code is merged
-
-  $scope.generateWeather(37.77, -122.419); //hardcoded...
+  $scope.$on('list-set', function(event, args) {
+    var coordinates = args[0].latlng;
+    weatherFactory.generateWeather(coordinates.lat, coordinates.lng);
+  });
 })
 
 .factory('weatherFactory', function($rootScope) {
