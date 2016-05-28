@@ -9,6 +9,7 @@ angular.module('parksAndEx.filter', [])
 	};
 	 $scope.toggleSize = function($event){
         	$("#map").toggleClass("smallMap fullMap");
+        	$("#mapButton").toggleClass("mapButtonMini mapButtonEnlarged");
         	filterFactory.resize();
         }
 	
