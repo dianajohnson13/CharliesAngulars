@@ -4,6 +4,8 @@ angular.module('parksAndEx.weather', [])
   $scope.sevenDayForecast;
   $scope.todaysWeather;
 
+  //ADD LISTENER PER WHAT BEN SAID!!!
+
   $scope.generateWeather = function(lat, lon) {
     weatherFactory.generateWeather(lat, lon);
   }
@@ -12,9 +14,13 @@ angular.module('parksAndEx.weather', [])
     $scope.todaysWeather = args;
   });
 
-   $scope.$on('sevenDayForecast', function(event, args) {
+  $scope.$on('sevenDayForecast', function(event, args) {
     $scope.sevenDayForecast = args.forecast;
   });
+
+  // $scope.$on('list-set', function(event, args) {
+  //   console.log('args', args)
+  // })   /// wait to populate until Ben's code is merged
 
   $scope.generateWeather(37.77, -122.419); //hardcoded...
 })
@@ -41,7 +47,7 @@ angular.module('parksAndEx.weather', [])
       highTemp: Math.round(kelvinToFahrenheit(resp.main.temp_max)),
       lowTemp: Math.round(kelvinToFahrenheit(resp.main.temp_min)),
       description: resp.weather[0].description,
-      icon: resp.weather[0].icon
+      iconLink: 'http://openweathermap.org/img/w/' + resp.weather[0].icon + '.png'
     });
   }
 
@@ -49,13 +55,13 @@ angular.module('parksAndEx.weather', [])
     var forecast = {};
     var allDays = resp.list;
     for (var i = 1; i < resp.list.length; i++) {
-      var today = allDays[i];
+      var day = allDays[i];
       forecast[i] =  {
-        date: formatDate(today.dt), /// FINISH THIS FUNCTION
-        highTemp: Math.round(kelvinToFahrenheit(today.temp.max)),
-        lowTemp: Math.round(kelvinToFahrenheit(today.temp.min)),
-        description: today.weather[0].description,
-        icon: today.weather[0].icon,
+        date: formatDate(day.dt), /// FINISH THIS FUNCTION
+        highTemp: Math.round(kelvinToFahrenheit(day.temp.max)),
+        lowTemp: Math.round(kelvinToFahrenheit(day.temp.min)),
+        description: day.weather[0].description,
+        iconLink: 'http://openweathermap.org/img/w/' + day.weather[0].icon + '.png'
       }
     }
     $rootScope.$broadcast('sevenDayForecast', {
