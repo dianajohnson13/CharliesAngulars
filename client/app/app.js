@@ -3,6 +3,6 @@ angular.module('parksAndEx', [
   'parksAndEx.services',
   'parksAndEx.filter', 
   'parksAndEx.toggleNavbar', 
-  'parksAndEx.description' 
+  'parksAndEx.description'
 ])
 // add config and run here if either is needed...
