@@ -111,26 +111,23 @@ div, span{
 
 /*navbar style here*/
 
-#tabUl {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+#navbar{
+    position: relative;
 }
-#tabLi {
-    float: left;
-    border: 1px solid #000;
-    border-bottom-width: 0;
-    border-radius: 10%;
-    margin: 3px 3px 0px 3px;
-    padding: 5px 5px 0px 5px;
-    background-color: #80dfff;
+#tabContainer{
+    position: relative;
+    background-color: #33d6ff;
+    text-align: center;
+}
+#navbarUl{
+    list-style-type: none;
+    position: relative;
+}
+.navbarLi{
+    display: inline-block;
+    border: 2px solid #000000;
     color: black;
+    padding: 5px;
+    border-radius: 5px 5px;
 }
-#mainView {
-    border: 1px solid black;
-    clear: both;
-}
-.active {
-    background-color: #FFF;
-    color: #000;
-}
+
