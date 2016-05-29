@@ -66,25 +66,24 @@
                 <div id="descriptionContent">{{description}}</div>
 
             </div>
-            <div id="tabContainer" ng-controller="TabsCtrl">
+            <div id="tabContainer" ng-controller="tabsController">
               <div id="navbar">
                 <ul id="navbarUl">
-                  <li class="navbarLi" ng-click="tab1 = !tab1">Weather</li>
-                  <li class="navbarLi" ng-click="tab2 = !tab2">New Feature3</li>
-                  <li class="navbarLi" ng-click="tab3 = !tab3">Reviews</li>
-                  <li class="navbarLi" ng-click="tab4 = !tab4">New Features1</li>
-                  <li class="navbarLi" ng-click="tab5 = !tab5">New Features2</li>
+                  <li class="navbarLi" ng-click="switchTabs('tab1')">Weather</li>
+                  <li class="navbarLi" ng-click="switchTabs('tab2')">New Feature3</li>
+                  <li class="navbarLi" ng-click="switchTabs('tab3')">Reviews</li>
+                  <li class="navbarLi" ng-click="switchTabs('tab4')">New Features1</li>
+                  <li class="navbarLi" ng-click="switchTabs('tab5')">New Features2</li>
                 </ul>
               </div>
 
-             <div id="tabContainer">
               <div id="weather" ng-controller="weatherController" ng-show="tab1">
                 <h3>Just a place holder for your awesome contents1</h3>
               </div>
-              <div id="featureContent2" ng-show="tab2">
+              <div id="featureContent2" ng-show="tab2" >
                 <h3>Just a place holder for your awesome contents2</h3>
               </div>
-              <div id="featureContent3" ng-show="tab3">
+              <div id="featureContent3" ng-show="tab3" >
                 <h3>Just a place holder for your awesome contents3</h3> 
               </div>
               <div id="featureContent4" ng-show="tab4">

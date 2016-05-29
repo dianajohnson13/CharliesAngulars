@@ -2,7 +2,7 @@ angular.module('parksAndEx', [
   'parksAndEx.homescreen',
   'parksAndEx.services', 
   'parksAndEx.filter',
-  'parksAndEx.Tabstoggle',
+  'parksAndEx.tabsToggle',
   'parksAndEx.description',
   'parksAndEx.weather'
 ]);
