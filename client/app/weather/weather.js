@@ -6,10 +6,12 @@ angular.module('parksAndEx.weather', [])
 
   $scope.$on('todaysWeather', function(event, args) {
     $scope.todaysWeather = args;
+    $scope.$apply();
   });
 
   $scope.$on('sevenDayForecast', function(event, args) {
     $scope.sevenDayForecast = args.forecast;
+    $scope.$apply();
   });
 
   $scope.$on('list-set', function(event, args) {
