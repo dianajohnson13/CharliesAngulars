@@ -10,6 +10,28 @@ angular.module('parksAndEx.description', [])
     var descriptionContent = "--";
 
     function getDescription(args, $scope) {
+
+        http://irmaservices.nps.gov/v3/rest/npspecies/fulllist/romo/mammal
+
+         var url = 'http://irmaservices.nps.gov/v3/rest/npspecies/fulllist/romo/mammal';
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: false,
+            contentType: "application/json",
+            dataType: 'jsonp',
+            success: function(data) {
+               console.log(data);
+
+
+
+            },
+            failure: function(err) {
+                console.log("ERR", err);
+            }
+        });
+
+
         var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + args.trim().split(" ").join("%20");
         $.ajax({
             type: 'GET',

@@ -125,6 +125,7 @@ div, span{
 /*navbar style here*/
 
 #navbar{
+<<<<<<< a44bd82eafa43fb032811860250d3f18cefc5fb4
     position: relative;
 }
 #tabContainer{
@@ -132,15 +133,41 @@ div, span{
     background-color: #33d6ff;
     text-align: center;
     z-index: 1;
+=======
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: inline-block;
+}
+.navbarLi {
+    float: left;
+    border: 1px solid #000;
+    border-bottom-width: 0;
+    border-radius: 10%;
+    margin: 3px 3px 0px 3px;
+    padding: 5px 5px 0px 5px;
+    background-color: #80dfff;
+    color: black;
+>>>>>>> (file)merging changes
 }
 #navbarUl{
     list-style-type: none;
     position: relative;
 }
+<<<<<<< a44bd82eafa43fb032811860250d3f18cefc5fb4
 .navbarLi{
     display: inline-block;
     border: 2px solid #000000;
     color: black;
     padding: 5px;
     border-radius: 5px 5px;
+=======
+.container{
+    display:none;
+}
+.active {
+    background-color: #FFF;
+    color: #000;
+>>>>>>> (file)merging changes
 }
