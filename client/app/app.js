@@ -3,7 +3,6 @@ angular.module('parksAndEx', [
   'parksAndEx.services', 
   'parksAndEx.filter',
   'parksAndEx.tabsToggle',
-  'parksAndEx.description',
-  'parksAndEx.weather'
+  'parksAndEx.description'
 ]);
 // add config and run here if either is needed...
