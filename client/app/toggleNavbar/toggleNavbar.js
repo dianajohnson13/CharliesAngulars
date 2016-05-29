@@ -1,7 +1,7 @@
 angular.module('parksAndEx.toggleNavbar', [])
 
 .controller('toggleNavbarController', function($scope) {
-  $scope.tab1 = false;
+  $scope.tab1 = true;
   $scope.tab2 = false;
   $scope.tab3 = false;
   $scope.tab4 = false;

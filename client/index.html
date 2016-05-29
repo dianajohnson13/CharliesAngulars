@@ -10,20 +10,18 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
     <script src="lib/angular/angular.js"></script>
+
 <!--     <script src="lib/jquery/src/jquery.js"></script>
  -->
- <script src="app/app.js"></script>
+    <script src="app/app.js"></script>
     <script src="app/homescreen/homescreen.js"></script>
     
     <script src='app/filter/filter.js'></script>
     <script src='app/description/description.js'></script>
-	<script src="app/services/services.js"></script>
-<script src="assets/park_category.js"></script>
-<!--     <script src='assets/maps_api.js'></script>
- 
- -->     
+	   <script src="app/services/services.js"></script>
+    <script src="assets/park_category.js"></script>
+    <script src="app/weather/weather.js"></script>
     <script src="app/toggleNavbar/toggleNavbar.js"></script>
-
  
   </head>
   <body>
@@ -66,7 +64,7 @@
               <div id="descriptionContainer" ng-controller="descriptionController">
                 <p>Description</p>
                 <div id="descriptionContent">{{description}}</div>
-              </div>
+            </div>
               <div id="tabContainer" ng-controller="toggleNavbarController">
                 <div id="navbar">
                   <ul id="navbarUl">
@@ -77,8 +75,27 @@
                     <li class="navbarLi" ng-click="reset(); tab5 = !tab5">New Features2</li>
                   </ul>
                 </div>
-                <div id="featureContent1" ng-show="tab1">
-                  <h3>Just a place holder for your awesome contents1</h3>
+                <div id="Weather" ng-controller="weatherController" ng-show="tab1">
+                    <div class="today">
+                      <div id="details">
+                        <span id="currTemp">Current Temperature: {{todaysWeather.currTemp}}</span>
+                        <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
+                        <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
+                        <span id="todayDescript">{{todaysWeather.description}}</span>
+                      </div>
+                      <div id="todaysWeatherIconBox">
+                        <img id="todaysWeatherIcon" src={{todaysWeather.iconLink}}>
+                      </div>
+                    </div>
+                    <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
+                      <div>
+                        <span class="forecastDate">{{day.date}}</span>
+                        <img id="forecastIcon" src={{day.iconLink}}>
+                        <span class="forcastedHigh">High: {{day.highTemp}}</span>
+                        <span class="forcastedLow">Low: {{day.lowTemp}}</span>
+                        <span class="forcastedDescription"></span>
+                      </div>
+                    </div>
                 </div>
                 <div id="featureContent2" ng-show="tab2">
                   <h3>Just a place holder for your awesome contents2</h3>
@@ -92,10 +109,10 @@
                 <div id="featureContent5" ng-show="tab5">
                   <h3>Just a place holder for your awesome contents5</h3> 
                 </div>
-              </div>
-            </span>
-          </div>
+             </div>
+          </span>
         </div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
 angular.module('parksAndEx', [
   'parksAndEx.homescreen',
   'parksAndEx.services', 
+  'parksAndEx.description',
   'parksAndEx.filter',
   'parksAndEx.toggleNavbar',
-  'parksAndEx.description'
-])
-// add config and run here if either is needed...
+  'parksAndEx.weather'
+]);
