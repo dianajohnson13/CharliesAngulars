@@ -124,12 +124,14 @@ div, span{
 
 /*navbar style here*/
 
-#tabUl {
+#navbar{
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
+    display: inline-block;
 }
-#tabLi {
+.navbarLi {
     float: left;
     border: 1px solid #000;
     border-bottom-width: 0;
@@ -142,6 +144,9 @@ div, span{
 #mainView {
     border: 1px solid black;
     clear: both;
+}
+.container{
+    display:none;
 }
 .active {
     background-color: #FFF;

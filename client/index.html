@@ -56,7 +56,7 @@
                   </ul>
                 </div>
               </div>
-              <div id="mapHolder" ngcontroller="mapsController">
+              <div id="mapHolder">
                 <span id="mapButton" class="mapButtonMini" ng-click="toggleSize($event)">+</span>
                 <div id="map" class="smallMap"></div>
                 
@@ -67,44 +67,38 @@
                 <p>Description</p>
                 <div id="descriptionContent">{{description}}</div>
               </div>
-             <div id="tabContainer">
-                <div id="tabs" ng-controller="TabsCtrl">
-                  <ul id="tabUl">
-                    <li id="tabLi" ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</li>
-                  </ul>
-                  <div id="mainView">
-                    <div ng-include="currentTab"></div>
-                  </div>
+              <div id="tabContainer" >
+                <div id="navbar">
+                    <span class="navbarLi active" linkedTo = "tab1">Current Weathers</span>
+                    <span class="navbarLi" linkedTo = "tab2">Forecast</span>
+                    <span class="navbarLi" linkedTo = "tab3">Reviews</span>
+                    <span class="navbarLi" linkedTo = "tab4">New Features1</span>
+                    <span class="navbarLi" linkedTo = "tab5">New Features2</span>
+                  <!-- <ul id="navbarUl">
+                    <li class="navbarLi active" linkedTo = "tab1">Current Weathers</li>
+                    <li class="navbarLi" linkedTo = "tab2">Forecast</li>
+                    <li class="navbarLi" linkedTo = "tab3">Reviews</li>
+                    <li class="navbarLi" linkedTo = "tab4">New Features1</li>
+                    <li class="navbarLi" linkedTo = "tab5">New Features2</li>
+                  </ul> -->
                 </div>
-                <script type="text/ng-template" id="one.tpl.html">
-                  <div id="tabOne">
-                    <h1>Put your awesome contents here1</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="two.tpl.html">
-                  <div id="tabTwo">
-                    <h1>Put your awesome contents here2</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="three.tpl.html">
-                  <div id="tabThree">
-                    <h1>Put your awesome contents here3</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="four.tpl.html">
-                  <div id="tabFour">
-                    <h1>Put your awesome contents here4</h1>
-                  </div>
-                </script>
-
-                <script type="text/ng-template" id="five.tpl.html">
-                  <div id="tabFive">
-                    <h1>Put your awesome contents here5</h1>
-                  </div>
-                </script>
+                <div>
+                <div id="tab1" style="display:block" class='container'>
+                  <h3>Just a place holder for your awesome contents1</h3>
+                </div>
+                <div id="tab2" class='container'>
+                  <h3>Just a place holder for your awesome contents2</h3>
+                </div>
+                <div id="tab3" class='container'>
+                  <h3>Just a place holder for your awesome contents3</h3> 
+                </div>
+                <div id="tab4" class='container'>
+                  <h3>Just a place holder for your awesome contents4</h3> 
+                </div>
+                <div id="tab5" class='container'>
+                  <h3>Just a place holder for your awesome contents5</h3> 
+                </div>
+                </div>
               </div>
             </span>
           </div>
@@ -112,3 +106,13 @@
     </div>
   </body>
 </html>
+
+<script>
+  $(".navbarLi").on("click", function(){
+    $(this).siblings( ".navbarLi" ).removeClass("active");
+    var IdToShow = $(this).addClass("active").attr("linkedTo");
+    $(".container").hide();
+    $("#"+IdToShow).show();
+
+  });
+</script>
