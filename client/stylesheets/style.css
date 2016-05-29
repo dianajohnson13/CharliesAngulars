@@ -164,7 +164,7 @@ div, span{
 /*navbar style here*/
 
 #navbar{
-    background-color: #dfdce3;
+    background-color: #93c178;
     position: relative;
     border-radius: 5px;
 }
@@ -172,10 +172,13 @@ div, span{
     position: relative;
     margin-top: 10px;
     border-radius: 6px;
-    border: solid 2px #465c8b;
-    background-color: #dfdce3;
-    height: 50vh;
-    overflow: auto;
+    border: solid 1px;
+    background-color: #93c178;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: inline-block;
 }
 #navbarUl{
     list-style-type: none;
@@ -184,19 +187,15 @@ div, span{
     margin: 0px;
 }
 .navbarLi{
-    background-color: #dfdce3;
+    background-color: #93c178;
     display: inline-block;
-    border: 2px solid #465c8b;
+    border: 2px solid;
     width: 19%;
     padding: 6px 2px 4px 2px;
     border-radius: 4px;
     border-bottom: none;
     border-right: none;
     font-weight: bold;
-}
-.navbarLi:hover {
-    background-color: #93c978;
-    color: white;
 }
 
 /*weather style here*/
@@ -233,41 +232,10 @@ div, span{
     display: block;
     align: center;
     padding: 5px;
-<<<<<<< 87055e5a158631939a7c9c79572fa047459abe3b
     border-radius: 5px 5px;
 }
 .AllAnimals{
     display:none;
-=======
-/*=======
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: inline-block;
-}
-.navbarLi {
-    float: left;
-    border: 1px solid #000;
-    border-bottom-width: 0;
-    border-radius: 10%;
-    margin: 3px 3px 0px 3px;
-    padding: 5px 5px 0px 5px;
-    background-color: #80dfff;
-    color: black;
-}
-#mainView {
-    border: 1px solid black;
-    clear: both;
-}
-.container{
-    display:none;
-}
-.active {
-    background-color: #FFF;
-    color: #000;
->>>>>>> (file)merging changes*/
->>>>>>> (file)merging changes
 }
 .speciesTitle{
     cursor: pointer;
