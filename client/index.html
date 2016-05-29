@@ -56,7 +56,7 @@
                   </ul>
                 </div>
               </div>
-              <div id="mapHolder" ngcontroller="mapsController">
+              <div id="mapHolder">
                 <span id="mapButton" class="mapButtonMini" ng-click="toggleSize($event)">+</span>
                 <div id="map" class="smallMap"></div>
                 
@@ -69,13 +69,11 @@
             </div>
               <div id="tabContainer" ng-controller="toggleNavbarController">
                 <div id="navbar">
-                  <ul id="navbarUl">
-                    <li class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</li>
-                    <li class="navbarLi" ng-click="reset(); tab2 = !tab2">Forecast</li>
-                    <li class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</li>
-                    <li class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</li>
-                    <li class="navbarLi" ng-click="reset(); tab5 = !tab5">New Features2</li>
-                  </ul>
+                  <span class="navbarLi active" linkedTo = "tab1">Current Weathers</span>
+                  <span class="navbarLi" linkedTo = "tab2">Forecast</span>
+                  <span class="navbarLi" linkedTo = "tab3">Reviews</span>
+                  <span class="navbarLi" linkedTo = "tab4">New Features1</span>
+                  <span class="navbarLi" linkedTo = "tab5">New Features2</span>
                 </div>
                 <div id="weather" ng-controller="weatherController" ng-show="tab1">
                     <div class="today">
@@ -117,14 +115,18 @@
   </body>
 </html>
 
- 
-
 <script>
   $( "body" ).on( "click", ".speciesTitle",function() {
     var currentSpecies = $(this).text().trim();
-    $(".AllAnimals[species!='"+currentSpecies+"']").hide(); 
-    $(".AllAnimals[species='"+currentSpecies+"']").show(); 
-
-});
+    if($(this).attr("active") == "true"){
+      $(".AllAnimals[species='"+currentSpecies+"']").hide();
+      $(this).attr("active","false");
+    }
+    else{
+      $(".speciesTitle").attr("active","false");
+      $(this).attr("active","true");
+      $(".AllAnimals[species!='"+currentSpecies+"']").hide(); 
+      $(".AllAnimals[species='"+currentSpecies+"']").show(); 
+    }
+  });
 </script>
- 
