@@ -6,16 +6,20 @@ angular.module('parksAndEx.filter', [])
 	});
 	$scope.rerenderAll = function (param1, param2) {
 		console.log(param1, param2);
+		$rootScope.$broadcast('switch-park', {
+      lat: param1,
+      lng: param2
+    });
 	};
-	 $scope.toggleSize = function($event){
-        	$("#map").toggleClass("smallMap fullMap");
-        	filterFactory.resize();
-        }
+	$scope.toggleSize = function($event){
+  	$("#map").toggleClass("smallMap fullMap");
+  	filterFactory.resize();
+  }
 	
 }).factory('filterFactory', function($http) {
 	function resize(){
-      	google.maps.event.trigger(map, "resize");
-    }
+    google.maps.event.trigger(map, "resize");
+  }
  	var $scope = null;
  	var $rootScope = null;
 	function callbackFn(results, status) {

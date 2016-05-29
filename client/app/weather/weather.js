@@ -16,6 +16,10 @@ angular.module('parksAndEx.weather', [])
     var coordinates = args[0].latlng;
     weatherFactory.generateWeather(coordinates.lat, coordinates.lng);
   });
+
+  $scope.$on('switch-park', function(event, args) {
+    weatherFactory.generateWeather(args.lat, args.lng);
+  });
 })
 
 .factory('weatherFactory', function($rootScope) {
