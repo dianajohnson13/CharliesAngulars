@@ -117,13 +117,26 @@ div, span{
     padding: 10px;
 }
 #mapButton{
-    float:right;
-    border-radius:25px;
+       
+
+}
+.mapButtonMini{
+     float: right;
+    border-radius: 25px;
     position: absolute;
     z-index: 99999;
-    left: 292px;
     background: white;
 }
+.mapButtonEnlarged {
+    float: right;
+    right: 0;
+    top: 0;
+    font-size: 50px;
+    border-radius: 25px;
+    position: absolute;
+    z-index: 99999;
+    background: white;
+    }
 .fullMap{
     position: absolute !important;
     width: 100%;

@@ -18,6 +18,8 @@ angular.module('parksAndEx.filter', [])
         	$("#map").toggleClass("smallMap fullMap");
         	$("#mapButton").toggleClass("mapButtonMini mapButtonEnlarged");
         	filterFactory.resize();
+        	window.scrollTo(0, 0);
+
         }
  
 	
