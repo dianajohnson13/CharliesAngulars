@@ -5,6 +5,10 @@ angular.module('parksAndEx.species', ['ngSanitize'])
     $scope.$on('list-set', function(event, args) {
         speciesFactory.generate(args[0].name, $scope, $sce);
     });
+    $scope.$on('switch-park', function(event, args) {
+       $scope.textArea = "LOADING SPECIES";
+        speciesFactory.generate(args.name, $scope, $sce);
+    });
 }).factory('speciesFactory', function($http) {
     function XMLtoJSON() {
         var me = this;
@@ -95,10 +99,13 @@ angular.module('parksAndEx.species', ['ngSanitize'])
                     if(!objson.ArrayOfSpeciesListItem || !objson.ArrayOfSpeciesListItem.SpeciesListItem) return;
                     for (var j = 0; j < objson.ArrayOfSpeciesListItem.SpeciesListItem.length; j++) {
                         var animalCommonName = objson.ArrayOfSpeciesListItem.SpeciesListItem[j].CommonNames["#text"];
+                        if(animalCommonName)
                          others += "<div class='animal'> <a href='https://en.wikipedia.org/wiki/"+animalCommonName.split(' ').join('_').split("'").join("%27")+"''>"+animalCommonName+"</a></div>";
                     }
                     //console.log("--------",species[i],"--------", others);
+                    $scope.$apply(function () {
                     $scope.textArea =  $sce.trustAsHtml($scope.textArea+"<div class='speciesHolder'><h4 class='speciesTitle'>"+species[i]+"</h4><div species = '"+species[i]+"'  class='AllAnimals'>"+others+"</div></div>") ;
+                 });
 
                 },
                 failure: function(err) {
