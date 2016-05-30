@@ -16,18 +16,21 @@
  -->
     <script src="app/app.js"></script>
     <script src="app/homescreen/homescreen.js"></script>
-    
     <script src='app/filter/filter.js'></script>
     <script src='app/description/description.js'></script>
-     <script src="app/services/services.js"></script>
-     <script src="app/species/species.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/species/species.js"></script>
     <script src="assets/park_category.js"></script>
     <script src="app/weather/weather.js"></script>
+
+<!--     <script src='assets/maps_api.js'></script>
+ 
+ -->     
     <script src="app/toggleNavbar/toggleNavbar.js"></script>
  
   </head>
   <body>
-    <h1> {{test}} </h1>
+    
     <div ng-controller="homescreenController">
       <div ng-hide="searchStatus">
         <div id="popup">
@@ -39,7 +42,7 @@
         </div>
       </div>
         <div ng-show="searchStatus" id="detailDisplay">
-           <span id="logo"> <img src="assets/logo.png"/> </span>
+          <span id="logo"> <img src="assets/logo.png"/> </span>
           <div id="totalContainer">
             <span id="filterMapContainer" ng-controller="filterController">
               <div id="filterContainer" > <!--Removed Dash from NG_controller-->
@@ -68,15 +71,16 @@
                 <div id="descriptionContent">{{description}}</div>
             </div>
               <div id="tabContainer" ng-controller="toggleNavbarController">
-                <div id="navbar">
-                  <span class="navbarLi active" linkedTo = "tab1">Current Weathers</span>
-                  <span class="navbarLi" linkedTo = "tab2">Forecast</span>
-                  <span class="navbarLi" linkedTo = "tab3">Reviews</span>
-                  <span class="navbarLi" linkedTo = "tab4">New Features1</span>
-                  <span class="navbarLi" linkedTo = "tab5">New Features2</span>
+                 <div id="navbar">
+                  <div id="navbarUl">
+                    <span class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
+                    <span class="navbarLi" ng-click="reset(); tab2 = !tab2">Forecast</span>
+                    <span class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</span>
+                    <span class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</span>
+                  </div>
                 </div>
                 <div id="weather" ng-controller="weatherController" ng-show="tab1">
-                    <div class="today">
+                  <div class="today">
                       <div id="details">
                         <span id="currTemp">Current Temp: {{todaysWeather.currTemp}}</span>
                         <span id="todayDescription">{{todaysWeather.description}}</span>
@@ -114,7 +118,6 @@
     </div>
   </body>
 </html>
-
 
 <script>
   $( "body" ).on( "click", ".speciesTitle",function() {
