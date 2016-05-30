@@ -2,7 +2,8 @@ angular.module('parksAndEx.filter', [])
 
 .controller('filterController', function ($scope,$rootScope, filterFactory) {
 	$scope.$on('initial-generate', function(event, args) {
-    	filterFactory.generate(args, $scope, $rootScope);
+    	input_global = args;
+		filterFactory.generate(args, $scope, $rootScope);
 	});
 	$scope.rerenderAll = function (param1, param2) {
 		console.log(param1, param2);
@@ -15,6 +16,7 @@ angular.module('parksAndEx.filter', [])
   	$("#map").toggleClass("smallMap fullMap");
   	filterFactory.resize();
   }
+	
 	
 }).factory('filterFactory', function($http) {
 	function resize(){
@@ -29,6 +31,14 @@ angular.module('parksAndEx.filter', [])
 		var lng = element.geometry.location.lng();
 		element.latlng={lat:lat, lng:lng}
 		});
+		var temp;
+		for(var i = 1; i < results.length; i++) {
+			if (results[i].name.toUpperCase() === input_global.toUpperCase()) {
+			temp = results[i];
+			results.splice(i);
+			results.unshift(temp);
+			}
+		}
 		$scope.locations = results;
 		$rootScope.$broadcast('list-set', results);
 		console.log(results);
@@ -91,5 +101,4 @@ angular.module('parksAndEx.filter', [])
 
 });
 
- 
-
+var input_global;

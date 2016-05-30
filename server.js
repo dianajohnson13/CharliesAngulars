@@ -2,7 +2,7 @@ var express  = require('express');
 var mongoose = require('mongoose'); 
 var morgan = require('morgan');             
 var bodyParser = require('body-parser');    
-var methodOverride = require('method-override'); 
+var methodOverride = require('method-override');
 
 var app = express();
 //mongodb to be connected once deployed with URI
@@ -39,4 +39,3 @@ var port = process.env.PORT || 8080;
 app.listen(port);
 
 console.log('Server now listening on port ' + port);
-
