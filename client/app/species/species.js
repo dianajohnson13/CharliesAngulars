@@ -77,7 +77,7 @@ angular.module('parksAndEx.species', ['ngSanitize'])
         }
         var xml2json = new XMLtoJSON();
         for (let i = 0; i < species.length; i++) {
-            var others = "";
+            //var others = "";
 
             var url = 'http://irmaservices.nps.gov/v3/rest/npspecies/fulllist/' + parkID + "/" + species[i];
             var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=xml&callback=?';
@@ -89,10 +89,13 @@ angular.module('parksAndEx.species', ['ngSanitize'])
                 crossDomain: true,
                 dataType: 'json',
                 success: function(data) {
+                    var others = "";
                     var objson = xml2json.fromStr(data.results[0]);
+                     console.log(objson);
                     if(!objson.ArrayOfSpeciesListItem || !objson.ArrayOfSpeciesListItem.SpeciesListItem) return;
                     for (var j = 0; j < objson.ArrayOfSpeciesListItem.SpeciesListItem.length; j++) {
-                        others += "<div class='animal'>"+objson.ArrayOfSpeciesListItem.SpeciesListItem[j].CommonNames["#text"]+"</div>";
+                        var animalCommonName = objson.ArrayOfSpeciesListItem.SpeciesListItem[j].CommonNames["#text"];
+                         others += "<div class='animal'> <a href='https://en.wikipedia.org/wiki/"+animalCommonName.split(' ').join('_').split("'").join("%27")+"''>"+animalCommonName+"</a></div>";
                     }
                     //console.log("--------",species[i],"--------", others);
                     $scope.textArea =  $sce.trustAsHtml($scope.textArea+"<div class='speciesHolder'><h4 class='speciesTitle'>"+species[i]+"</h4><div species = '"+species[i]+"'  class='AllAnimals'>"+others+"</div></div>") ;
