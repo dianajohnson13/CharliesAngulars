@@ -53,7 +53,7 @@ html {
     width: 200px;
 }
 div, span{
-    border: 1px solid black;
+   -border: 1px solid #663333;
 }
 #totalContainer{
     height:100%;
@@ -79,15 +79,22 @@ div, span{
     height: 50vh;
     overflow: scroll;
 }
+#filterContainer{
+    background-color: #FFCC99;
+}
 #descriptionContainer{
     height: 50%;
     width:100%;
+    background-color: #FFCC99;
 }
 #descriptionContent{
     height: 30VH;
     width: 100%;
     overflow: scroll;
 
+}
+#detailDisplay{
+    padding: 10px;
 }
 #mapButton{
     float:right;
@@ -116,7 +123,7 @@ div, span{
 }
 #tabContainer{
     position: relative;
-    background-color: #33d6ff;
+    background-color: #FFCC99;
     text-align: center;
     z-index: 1;
 }
@@ -130,4 +137,14 @@ div, span{
     color: black;
     padding: 5px;
     border-radius: 5px 5px;
+}
+.AllAnimals{
+    display:none;
+}
+#tabContainer{
+    height: 50vh;
+    overflow: auto;
+}
+.speciesTitle{
+    cursor: pointer;
 }

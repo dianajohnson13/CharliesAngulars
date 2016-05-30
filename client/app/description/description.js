@@ -10,6 +10,7 @@ angular.module('parksAndEx.description', [])
     var descriptionContent = "--";
 
     function getDescription(args, $scope) {
+
         var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + args.trim().split(" ").join("%20");
         $.ajax({
             type: 'GET',
@@ -24,7 +25,7 @@ angular.module('parksAndEx.description', [])
                 $scope.$apply(function() {
                     $scope.description = content;
                 });
-                console.log($scope.description);
+                //console.log($scope.description);
 
             },
             failure: function(err) {
