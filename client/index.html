@@ -56,7 +56,7 @@
                   </ul>
                 </div>
               </div>
-              <div id="mapHolder">
+              <div id="mapHolder" ngcontroller="mapsController">
                 <span id="mapButton" class="mapButtonMini" ng-click="toggleSize($event)">+</span>
                 <div id="map" class="smallMap"></div>
                 
@@ -123,9 +123,18 @@
 
 <script>
   $( "body" ).on( "click", ".speciesTitle",function() {
+
     var currentSpecies = $(this).text().trim();
-    $(".AllAnimals[species!='"+currentSpecies+"']").hide(); 
-    $(".AllAnimals[species='"+currentSpecies+"']").show(); 
+    if($(this).attr("active") == "true"){
+      $(".AllAnimals[species='"+currentSpecies+"']").hide();
+      $(this).attr("active","false");
+    }
+    else{
+      $(".speciesTitle").attr("active","false");
+      $(this).attr("active","true");
+      $(".AllAnimals[species!='"+currentSpecies+"']").hide(); 
+      $(".AllAnimals[species='"+currentSpecies+"']").show(); 
+    }
 
 });
 </script>
