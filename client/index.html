@@ -11,23 +11,23 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-sanitize/angular-sanitize.js"></script>
-
-<!--     <script src="lib/jquery/src/jquery.js"></script>
- -->
     <script src="app/app.js"></script>
     <script src="app/homescreen/homescreen.js"></script>
-    
     <script src='app/filter/filter.js'></script>
     <script src='app/description/description.js'></script>
      <script src="app/services/services.js"></script>
      <script src="app/species/species.js"></script>
     <script src="assets/park_category.js"></script>
     <script src="app/weather/weather.js"></script>
+
+<!--     <script src='assets/maps_api.js'></script>
+ 
+ -->     
     <script src="app/toggleNavbar/toggleNavbar.js"></script>
  
   </head>
   <body>
-    <h1> {{test}} </h1>
+    
     <div ng-controller="homescreenController">
       <div ng-hide="searchStatus">
         <div id="popup">
@@ -96,12 +96,18 @@
                         <span class="forcastedDescription"></span>
                       </div>
                     </div>
+                <div id="featureContent1"  ng-show="tab1">
+                  <h3>Just a place holder for your awesome contents3</h3> 
                 </div>
                 <div id="featureContent2" ng-show="tab2">
                   <h3>Just a place holder for your awesome contents2</h3>
                 </div>
                 <div id="featureContent3" ng-show="tab3">
                   <h3>Just a place holder for your awesome contents3</h3> 
+                </div>
+                <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
+                  <div ng-bind-html="textArea"></div>  
+                  <h3>Just a place holder for your awesome contents4</h3> 
                 </div>
                 <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
                   <div ng-bind-html="textArea"></div>  
@@ -117,9 +123,6 @@
     </div>
   </body>
 </html>
-
- 
-
 <script>
   $( "body" ).on( "click", ".speciesTitle",function() {
     var currentSpecies = $(this).text().trim();
@@ -128,4 +131,5 @@
 
 });
 </script>
+ 
 

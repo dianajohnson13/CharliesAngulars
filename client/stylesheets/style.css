@@ -84,6 +84,7 @@ div, span{
     overflow: scroll;
 }
 #filterContainer{
+<<<<<<< 617a4895f457eacc8916a1bcf9f8880c37434dd0
     background-color: #dfdce3;
     border: solid 2px;
     border-radius: 6px;
@@ -100,7 +101,6 @@ div, span{
 #descriptionContainer{
     height: 50%;
     width:100%;
-
 }
 #descriptionContent{
     height: 30VH;
@@ -114,27 +114,17 @@ div, span{
     padding: 20px;
     background-color: #f7ef6a;
 }
+#detailDisplay{
+    padding: 10px;
+}
 #mapButton{
-       
-
-}
-.mapButtonMini{
-     float: right;
-    border-radius: 25px;
+    float:right;
+    border-radius:25px;
     position: absolute;
     z-index: 99999;
+    left: 292px;
     background: white;
 }
-.mapButtonEnlarged {
-    float: right;
-    right: 0;
-    top: 0;
-    font-size: 50px;
-    border-radius: 25px;
-    position: absolute;
-    z-index: 99999;
-    background: white;
-    }
 .fullMap{
     position: absolute !important;
     width: 100%;
@@ -182,7 +172,6 @@ div, span{
     padding: 0px;
     margin: 0px;
 }
-<<<<<<< a44bd82eafa43fb032811860250d3f18cefc5fb4
 .navbarLi{
     background-color: #93c178;
     display: inline-block;
@@ -229,4 +218,15 @@ div, span{
     display: block;
     align: center;
     padding: 5px;
+    border-radius: 5px 5px;
+}
+.AllAnimals{
+    display:none;
+}
+#tabContainer{
+    height: 50vh;
+    overflow: auto;
+}
+.speciesTitle{
+    cursor: pointer;
 }
