@@ -161,6 +161,8 @@ div, span{
     border-radius: 6px;
     border: solid 2px #465c8b;
     background-color: #dfdce3;
+    height: 50vh;
+    overflow: auto;
 }
 #navbarUl{
     list-style-type: none;
