@@ -10,6 +10,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
     <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
 
 <!--     <script src="lib/jquery/src/jquery.js"></script>
  -->
@@ -19,6 +20,7 @@
     <script src='app/filter/filter.js'></script>
     <script src='app/description/description.js'></script>
      <script src="app/services/services.js"></script>
+     <script src="app/species/species.js"></script>
     <script src="assets/park_category.js"></script>
     <script src="app/weather/weather.js"></script>
     <script src="app/toggleNavbar/toggleNavbar.js"></script>
@@ -103,8 +105,8 @@
                 <div id="featureContent3" ng-show="tab3">
                   <h3>Just a place holder for your awesome contents3</h3> 
                 </div>
-                <div id="featureContent4" ng-show="tab4">
-                  <h3>Just a place holder for your awesome contents4</h3> 
+                <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
+                  <div ng-bind-html="textArea"></div>  
                 </div>
                 <div id="featureContent5" ng-show="tab5">
                   <h3>Just a place holder for your awesome contents5</h3> 
