@@ -63,6 +63,9 @@ html {
 #totalDisplayContainer{
     float:right;
     width: 68%;
+    background-color: #d6c6c2;
+    padding: 20px;
+    border-radius: 6px;
 }
 #filterMapContainer{
     height: 100vh;
