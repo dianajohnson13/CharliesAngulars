@@ -75,10 +75,7 @@ div, span{
 #filterContent ul{
     -list-style-type: none;
     margin:0;
-    padding: 0 5px; 
-}
-
-#filterContent{
+    padding: 0 5px;
     height: 50vh;
     overflow: scroll;
 }
@@ -127,9 +124,6 @@ div, span{
     background-color: #f7ef6a;
     border-radius: 6px;
     border: 2px solid #465c8b;
-}
-#mapButton{
-       
 }
 #mapButton{
     float:right;
