@@ -53,7 +53,7 @@ html {
     width: 200px;
 }
 div, span{
-    border: 1px solid black;
+   -border: 1px solid #663333;
 }
 #totalContainer{
     height:100%;
@@ -79,9 +79,13 @@ div, span{
     height: 50vh;
     overflow: scroll;
 }
+#filterContainer{
+    background-color: #FFCC99;
+}
 #descriptionContainer{
     height: 50%;
     width:100%;
+    background-color: #FFCC99;
 }
 #descriptionContent{
     height: 30VH;
@@ -89,27 +93,17 @@ div, span{
     overflow: scroll;
 
 }
+#detailDisplay{
+    padding: 10px;
+}
 #mapButton{
-       
-
-}
-.mapButtonMini{
-     float: right;
-    border-radius: 25px;
+    float:right;
+    border-radius:25px;
     position: absolute;
     z-index: 99999;
+    left: 292px;
     background: white;
 }
-.mapButtonEnlarged {
-    float: right;
-    right: 0;
-    top: 0;
-    font-size: 50px;
-    border-radius: 25px;
-    position: absolute;
-    z-index: 99999;
-    background: white;
-    }
 .fullMap{
     position: absolute !important;
     width: 100%;
@@ -125,49 +119,32 @@ div, span{
 /*navbar style here*/
 
 #navbar{
-<<<<<<< a44bd82eafa43fb032811860250d3f18cefc5fb4
     position: relative;
 }
 #tabContainer{
     position: relative;
-    background-color: #33d6ff;
+    background-color: #FFCC99;
     text-align: center;
     z-index: 1;
-=======
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: inline-block;
-}
-.navbarLi {
-    float: left;
-    border: 1px solid #000;
-    border-bottom-width: 0;
-    border-radius: 10%;
-    margin: 3px 3px 0px 3px;
-    padding: 5px 5px 0px 5px;
-    background-color: #80dfff;
-    color: black;
->>>>>>> (file)merging changes
 }
 #navbarUl{
     list-style-type: none;
     position: relative;
 }
-<<<<<<< a44bd82eafa43fb032811860250d3f18cefc5fb4
 .navbarLi{
     display: inline-block;
     border: 2px solid #000000;
     color: black;
     padding: 5px;
     border-radius: 5px 5px;
-=======
-.container{
+}
+.AllAnimals{
     display:none;
 }
-.active {
-    background-color: #FFF;
-    color: #000;
->>>>>>> (file)merging changes
+#tabContainer{
+    height: 50vh;
+    overflow: auto;
+}
+.speciesTitle{
+    cursor: pointer;
 }

@@ -10,6 +10,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
     <script src="lib/angular/angular.js"></script>
+<<<<<<< cf5f1c7ce1c64da65bae1a057a07e37f7ba2b6da
+=======
+    <script src="lib/angular/angular-sanitize.js"></script>
+>>>>>>> (species) add in species, styles, ngsanitize, bower.json additgion
 
 <!--     <script src="lib/jquery/src/jquery.js"></script>
  -->
@@ -18,14 +22,24 @@
     
     <script src='app/filter/filter.js'></script>
     <script src='app/description/description.js'></script>
+<<<<<<< cf5f1c7ce1c64da65bae1a057a07e37f7ba2b6da
 	   <script src="app/services/services.js"></script>
     <script src="assets/park_category.js"></script>
     <script src="app/weather/weather.js"></script>
+=======
+	<script src="app/services/services.js"></script>
+<script src="assets/park_category.js"></script>
+    <script src='app/species/species.js'></script>
+
+<!--     <script src='assets/maps_api.js'></script>
+ 
+ -->     
+>>>>>>> (species) add in species, styles, ngsanitize, bower.json additgion
     <script src="app/toggleNavbar/toggleNavbar.js"></script>
  
   </head>
   <body>
-    <h1> {{test}} </h1>
+    
     <div ng-controller="homescreenController">
       <div ng-hide="searchStatus">
         <div id="popup">
@@ -37,7 +51,7 @@
         </div>
       </div>
         <div ng-show="searchStatus" id="detailDisplay">
-          <span id="logo"> LOGO </span>
+          <span id="logo"> <img src="assets/logo.png"/> </span>
           <div id="totalContainer">
             <span id="filterMapContainer" ng-controller="filterController">
               <div id="filterContainer" > <!--Removed Dash from NG_controller-->
@@ -71,10 +85,11 @@
                     <li class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</li>
                     <li class="navbarLi" ng-click="reset(); tab2 = !tab2">Forecast</li>
                     <li class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</li>
-                    <li class="navbarLi" ng-click="reset(); tab4 = !tab4">New Features1</li>
+                    <li class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</li>
                     <li class="navbarLi" ng-click="reset(); tab5 = !tab5">New Features2</li>
                   </ul>
                 </div>
+<<<<<<< cf5f1c7ce1c64da65bae1a057a07e37f7ba2b6da
                 <div id="Weather" ng-controller="weatherController" ng-show="tab1">
                     <div class="today">
                       <div id="details">
@@ -96,15 +111,19 @@
                         <span class="forcastedDescription"></span>
                       </div>
                     </div>
+=======
+                <div id="featureContent1"  ng-show="tab1">
+                  <h3>Just a place holder for your awesome contents3</h3> 
+>>>>>>> (species) add in species, styles, ngsanitize, bower.json additgion
                 </div>
                 <div id="featureContent2" ng-show="tab2">
                   <h3>Just a place holder for your awesome contents2</h3>
                 </div>
                 <div id="featureContent3" ng-show="tab3">
-                  <h3>Just a place holder for your awesome contents3</h3> 
-                </div>
-                <div id="featureContent4" ng-show="tab4">
                   <h3>Just a place holder for your awesome contents4</h3> 
+                </div>
+                <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
+                  <div ng-bind-html="textArea"></div>  
                 </div>
                 <div id="featureContent5" ng-show="tab5">
                   <h3>Just a place holder for your awesome contents5</h3> 
@@ -116,5 +135,12 @@
     </div>
   </body>
 </html>
+<script>
+  $( "body" ).on( "click", ".speciesTitle",function() {
+    var currentSpecies = $(this).text().trim();
+    $(".AllAnimals[species!='"+currentSpecies+"']").hide(); 
+    $(".AllAnimals[species='"+currentSpecies+"']").show(); 
 
+});
+</script>
  
