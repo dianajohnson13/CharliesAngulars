@@ -109,18 +109,14 @@ angular.module('parksAndEx.species', ['ngSanitize'])
                     if(!objson.ArrayOfSpeciesListItem || !objson.ArrayOfSpeciesListItem.SpeciesListItem) return;
                     for (var j = 0; j < objson.ArrayOfSpeciesListItem.SpeciesListItem.length; j++) {
                         var animalCommonName = objson.ArrayOfSpeciesListItem.SpeciesListItem[j].CommonNames["#text"];
-<<<<<<< 3efd695f575183b5ffec2b1b3cae1b7acf06dc53
                         if(animalCommonName)
                          others += "<div class='animal'> <a target='_blank' href='https://en.wikipedia.org/wiki/"+animalCommonName.split(' ').join('_').split("'").join("%27")+"''>"+animalCommonName+"</a></div>";
-=======
-                         others += "<div class='animal'> <a href='https://en.wikipedia.org/wiki/"+animalCommonName.split(' ').join('_').split("'").join("%27")+"''>"+animalCommonName+"</a></div>";
->>>>>>> (species) add in species, styles, ngsanitize, bower.json additgion
                     }
                     //console.log("--------",species[i],"--------", others);
                     let speciesName = species[i];
                     $scope.$apply(function () {
-                    $scope.textArea =  $sce.trustAsHtml($scope.textArea+"<div class='speciesHolder'><h4 class='speciesTitle'>"+species[i]+"</h4><div species = '"+speciesName+"'  class='AllAnimals'>"+others+"</div></div>") ;
-                 });
+                      $scope.textArea =  $sce.trustAsHtml($scope.textArea+"<div class='speciesHolder'><h4 class='speciesTitle'>"+species[i]+"</h4><div species = '"+speciesName+"'  class='AllAnimals'>"+others+"</div></div>") ;
+                  });
 
                 },
                 failure: function(err) {
