@@ -48,8 +48,8 @@
                 </div>
                 <div id="filterContent" >
                   <ul ng-repeat="loc in locations track by $index"> <!-- sort by distance then rating-->
-                    <li>
-                      <div ng-click = "rerenderAll(loc.latlng.lat, loc.latlng.lng)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. {{loc.name}}</div>
+                    <li class="filteredItem">
+                      <div ng-click = "rerenderAll(loc.latlng.lat, loc.latlng.lng)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. <strong>{{loc.name}}</strong></div>
                       <div>{{loc.vicinity}}</div>
                       <div>Rating: {{loc.rating}}</div>
                     </li>
@@ -77,22 +77,20 @@
                     <li class="navbarLi" ng-click="reset(); tab5 = !tab5">New Features2</li>
                   </ul>
                 </div>
-                <div id="Weather" ng-controller="weatherController" ng-show="tab1">
+                <div id="weather" ng-controller="weatherController" ng-show="tab1">
                     <div class="today">
                       <div id="details">
-                        <span id="currTemp">Current Temperature: {{todaysWeather.currTemp}}</span>
+                        <span id="currTemp">Current Temp: {{todaysWeather.currTemp}}</span>
+                        <span id="todayDescription">{{todaysWeather.description}}</span>
+                        <img id="todaysWeatherIcon" src={{todaysWeather.iconLink}}>
                         <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
                         <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
-                        <span id="todayDescript">{{todaysWeather.description}}</span>
-                      </div>
-                      <div id="todaysWeatherIconBox">
-                        <img id="todaysWeatherIcon" src={{todaysWeather.iconLink}}>
                       </div>
                     </div>
                     <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
                       <div>
                         <span class="forecastDate">{{day.date}}</span>
-                        <img id="forecastIcon" src={{day.iconLink}}>
+                        <img class="forecastIcon" src={{day.iconLink}}>
                         <span class="forcastedHigh">High: {{day.highTemp}}</span>
                         <span class="forcastedLow">Low: {{day.lowTemp}}</span>
                         <span class="forcastedDescription"></span>
