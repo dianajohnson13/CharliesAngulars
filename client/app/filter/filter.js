@@ -10,10 +10,10 @@ angular.module('parksAndEx.filter', [])
 		$scope.selectedIndex = $index;
 		console.log(param1, param2);
 		$rootScope.$broadcast('switch-park', {
-      lat: param1,
-      lng: param2,
-      name:name
-    });
+		  lat: param1,
+		  lng: param2,
+		  name: name
+		});
 	};
  
 	 $scope.toggleSize = function($event){
