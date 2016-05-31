@@ -5,11 +5,12 @@ angular.module('parksAndEx.filter', [])
     	input_global = args;
 		filterFactory.generate(args, $scope, $rootScope);
 	});
-	$scope.rerenderAll = function (param1, param2) {
+	$scope.rerenderAll = function (param1, param2, name) {
 		console.log(param1, param2);
 		$rootScope.$broadcast('switch-park', {
       lat: param1,
-      lng: param2
+      lng: param2,
+      name:name
     });
 	};
  
@@ -17,13 +18,15 @@ angular.module('parksAndEx.filter', [])
         	$("#map").toggleClass("smallMap fullMap");
         	$("#mapButton").toggleClass("mapButtonMini mapButtonEnlarged");
         	filterFactory.resize();
+        	window.scrollTo(0, 0);
+
         }
  
 	
 }).factory('filterFactory', function($http) {
 	function resize(){
     google.maps.event.trigger(map, "resize");
-  }
+  	}
  	var $scope = null;
  	var $rootScope = null;
 	function callbackFn(results, status) {

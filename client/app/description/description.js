@@ -4,6 +4,10 @@ angular.module('parksAndEx.description', [])
     $scope.$on('list-set', function(event, args) {
         descriptionFactory.generate(args[0].name, $scope);
     });
+    $scope.$on('switch-park', function(event, args) {
+        descriptionFactory.generate(args.name, $scope);
+    });
+   
 
 }).factory('descriptionFactory', function($http) {
 
