@@ -6,6 +6,7 @@ angular.module('parksAndEx', [
   'parksAndEx.toggleNavbar',
   'parksAndEx.weather',
   'parksAndEx.species',
-  'parksAndEx.campgrounds'
+  'parksAndEx.campgrounds',
+  'parksAndEx.yelpReviews'
 ]);
  
