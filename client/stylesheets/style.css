@@ -221,6 +221,7 @@ div, span{
 #navbarUl{
     list-style-type: none;
     position: relative;
+    text-align: center;
     padding: 0px;
     margin: 0px;
 }
@@ -300,6 +301,6 @@ div, span{
     border-radius: 6px;
 }
 
-#campgroundsTitle {
+#campgroundsTitle, #campgroundsAmenitiesTitle {
 	font-weight: bold;
 }

@@ -108,7 +108,7 @@
                     <div ng-bind-html="textArea"></div>
                 </div>
                 <div id="campgrounds" ng-controller="campgroundsController" ng-show="tab5">
-                  <div id="campgroundsTitle"> Campground Amenities: </div>
+                  <div id="campgroundsTitle">Top Campground</div>
                   <div ng-show="hideCampgrounds">
                     No campgrounds found!
                   </div>
@@ -120,7 +120,7 @@
                     </div> 
                   </div>
                   <div> <strong>Description:</strong>- {{description}} </div>
-                  <div id="campgroundsTitle"> Campground Amenities: </div>
+                  <div id="campgroundsAmenitiesTitle"> Campground Amenities: </div>
                   <div ng-repeat="info in campgroundinfo" ng-show="!hideCampgrounds">
                     <span> {{info.name}} </span>
                   </div>
