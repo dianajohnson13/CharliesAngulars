@@ -111,8 +111,12 @@ angular.module('parksAndEx.species', ['ngSanitize'])
                     if (!objson.ArrayOfSpeciesListItem || !objson.ArrayOfSpeciesListItem.SpeciesListItem) return;
                     for (var j = 0; j < objson.ArrayOfSpeciesListItem.SpeciesListItem.length; j++) {
                         var animalCommonName = objson.ArrayOfSpeciesListItem.SpeciesListItem[j].CommonNames["#text"];
-                        if (animalCommonName)
+                        if (animalCommonName){
+                            animalCommonName = animalCommonName.split(",")[0];
                             others += "<div class='animal'> <a target='_blank' href='https://en.wikipedia.org/wiki/" + animalCommonName.split(' ').join('_').split("'").join("%27") + "''>" + animalCommonName + "</a></div>";
+
+                        }
+
                     }
                     //console.log("--------",species[i],"--------", others);
                     let speciesName = species[i];

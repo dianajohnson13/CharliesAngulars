@@ -73,8 +73,15 @@ angular.module('parksAndEx.campgrounds', [])
 			dataType: 'json',
 			success: function(data) {
 				console.log(data);
-				$scope.campgroundinfo = data.query.results.detailDescription.amenity;
-				$scope.$apply();
+				var traversed = data.query.results.detailDescription;
+				var dataObject = {name: traversed.facility, 
+									campgroundinfo:traversed.amenity, 
+									description: traversed.description,
+									contact:traversed.contact};
+
+				
+				$.extend( $scope, dataObject );
+				 $scope.$apply();
 			},
 			failure: function(err) {
 				console.log("ERR", err);
