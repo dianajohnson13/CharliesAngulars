@@ -231,6 +231,11 @@ div, span{
     color: white;
 }
 
+.navbarLiSelected {
+    background-color: #93c978;
+    color: white;
+}
+
 /*weather style here*/
 
 #weather {
