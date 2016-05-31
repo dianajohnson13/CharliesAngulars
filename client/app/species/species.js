@@ -93,8 +93,8 @@ angular.module('parksAndEx.species', ['ngSanitize'])
         for (let i = 0; i < species.length; i++) {
             //var others = "";
 
-            var url = 'http://irmaservices.nps.gov/v3/rest/npspecies/fulllist/' + parkID + "/" + species[i];
-            var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=xml&callback=?';
+            var url = 'https://irmaservices.nps.gov/v3/rest/npspecies/fulllist/' + parkID + "/" + species[i];
+            var yql = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=xml&callback=?';
             
             $.ajax({
                 type: 'GET',
