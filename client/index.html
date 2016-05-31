@@ -72,7 +72,6 @@
             <div id="navbar">
               <div id="navbarUl">
                 <span class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
-                <span class="navbarLi" ng-click="reset(); tab2 = !tab2">Forecast</span>
                 <span class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</span>
                 <span class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</span>
 				<span class="navbarLi" ng-click="reset(); tab5 = !tab5">Campgrounds</span>
@@ -109,7 +108,10 @@
             </div>
             <div id="campgrounds" ng-controller="campgroundsController" ng-show="tab5">
 			  <div id="campgroundsTitle"> Campground Amenities: </div>
-			  <div ng-repeat="info in campgroundinfo">
+			  <div ng-show="hideCampgrounds">
+			  No campgrounds found!
+			  </div>
+			  <div ng-repeat="info in campgroundinfo" ng-show="!hideCampgrounds">
 				<span> {{info.name}} </span>
 			  </div>  
             </div>
