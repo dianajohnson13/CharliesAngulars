@@ -1,119 +1,118 @@
 <!DOCTYPE html>
 <html ng-app="parksAndEx">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Parks and Exploration</title>
-    <meta name="description" content="A Resource for park info">
-    <meta name="Charlies Angulars" content="CharliesAngular">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/homescreen/homescreen.js"></script>
-    <script src='app/filter/filter.js'></script>
-    <script src='app/description/description.js'></script>
-    <script src="app/services/services.js"></script>
-    <script src="app/species/species.js"></script>
-    <script src="assets/park_category.js"></script>
-    <script src="app/weather/weather.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parks and Exploration</title>
+  <meta name="description" content="A Resource for park info">
+  <meta name="Charlies Angulars" content="CharliesAngular">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0&libraries=places"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/homescreen/homescreen.js"></script>
+  <script src='app/filter/filter.js'></script>
+  <script src='app/description/description.js'></script>
+  <script src="app/services/services.js"></script>
+  <script src="app/species/species.js"></script>
+  <script src="assets/park_category.js"></script>
+  <script src="app/weather/weather.js"></script>
 
 <!--     <script src='assets/maps_api.js'></script>
  
- -->     
-    <script src="app/toggleNavbar/toggleNavbar.js"></script>
- 
-  </head>
-  <body>
-    
-    <div ng-controller="homescreenController">
-      <div ng-hide="searchStatus">
-        <div id="popup">
-          <div id="searchBox">
-            <label>Search For Park By Location or Name</label>
-            <input id="location" type="text" name="searchText" value="Mission Dolores Park" ng-model="searched" placeholder="ex: San Francisco, CA or Yosemite">
-            <button id="searchButton"  ng-click="submitSearch(searched)">Search</button>
-          </div>
-        </div>
-      </div>
-        <div ng-show="searchStatus" id="detailDisplay">
-          <span id="logo"> <img src="assets/logo.png"/> </span>
-          <div id="totalContainer">
-            <span id="filterMapContainer" ng-controller="filterController">
-              <div id="filterContainer" > <!--Removed Dash from NG_controller-->
-                <div id="filterTitle">
-                  <p>{{searchText}}</p>
-                </div>
-                <div id="filterContent" >
-                  <ul ng-repeat="loc in locations track by $index"> <!-- sort by distance then rating-->
-                    <li class="filteredItem">
-                      <div ng-click = "rerenderAll(loc.latlng.lat, loc.latlng.lng, loc.name)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. <strong>{{loc.name}}</strong></div>
-                      <div>{{loc.vicinity}}</div>
-                      <div>Rating: {{loc.rating}}</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div id="mapHolder" ngcontroller="mapsController">
-                <span id="mapButton" class="mapButtonMini" ng-click="toggleSize($event)">+</span>
-                <div id="map" class="smallMap"></div>
-              </div>
-            </span>
-            <span id="totalDisplayContainer">
-              <div id="descriptionContainer" ng-controller="descriptionController">
-                <p id="parkName">Yosemite National Park</p>
-                <div id="descriptionContent">{{description}}</div>
-            </div>
-              <div id="tabContainer" ng-controller="toggleNavbarController">
-                <div id="navbar">
-                  <div id="navbarUl">
-                    <span class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
-                    <span class="navbarLi" ng-click="reset(); tab2 = !tab2">Forecast</span>
-                    <span class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</span>
-                    <span class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</span>
-                  </div>
-                </div>
-                <div id="weather" ng-controller="weatherController" ng-show="tab1">
-                  <div class="today">
-                      <div id="details">
-                        <span id="currTemp">Current Temp: {{todaysWeather.currTemp}}</span>
-                        <span id="todayDescription">{{todaysWeather.description}}</span>
-                        <img id="todaysWeatherIcon" src={{todaysWeather.iconLink}}>
-                        <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
-                        <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
-                      </div>
-                    </div>
-                    <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
-                      <div>
-                        <span class="forecastDate">{{day.date}}</span>
-                        <img class="forecastIcon" src={{day.iconLink}}>
-                        <span class="forcastedHigh">High: {{day.highTemp}}</span>
-                        <span class="forcastedLow">Low: {{day.lowTemp}}</span>
-                        <span class="forcastedDescription"></span>
-                      </div>
-                    </div>
-                  </div>
-                <div id="featureContent2" ng-show="tab2">
-                  <h3>Just a place holder for your awesome contents2</h3>
-                </div>
-                <div id="featureContent3" ng-show="tab3">
-                  <h3>Just a place holder for your awesome contents3</h3> 
-                </div>
-                <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
-                  <div ng-bind-html="textArea"></div>  
-                </div>
-                <div id="featureContent5" ng-show="tab5">
-                  <h3>Just a place holder for your awesome contents5</h3> 
-                </div>
-             
-          </span>
+-->     
+<script src="app/toggleNavbar/toggleNavbar.js"></script>
 
+</head>
+<body>
+
+  <div ng-controller="homescreenController">
+    <div ng-hide="searchStatus">
+      <div id="popup">
+        <div id="searchBox">
+          <label>Search For Park By Location or Name</label>
+          <input id="location" type="text" name="searchText" value="Mission Dolores Park" ng-model="searched" placeholder="ex: San Francisco, CA or Yosemite">
+          <button id="searchButton"  ng-click="submitSearch(searched)">Search</button>
         </div>
       </div>
     </div>
-  </body>
+    <div ng-show="searchStatus" id="detailDisplay">
+      <span id="logo"> <img src="assets/logo.png"/> </span>
+      <div id="totalContainer">
+        <span id="filterMapContainer" ng-controller="filterController">
+          <div id="filterContainer" > <!--Removed Dash from NG_controller-->
+            <div id="filterTitle">
+              <p>{{searchText}}</p>
+            </div>
+            <div id="filterContent" >
+              <ul ng-repeat="loc in locations track by $index"> <!-- sort by distance then rating-->
+                <li class="filteredItem">
+                  <div ng-click = "rerenderAll(loc.latlng.lat, loc.latlng.lng, loc.name)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. <strong>{{loc.name}}</strong></div>
+                  <div>{{loc.vicinity}}</div>
+                  <div>Rating: {{loc.rating}}</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="mapHolder" ngcontroller="mapsController">
+            <span id="mapButton" class="mapButtonMini" ng-click="toggleSize($event)">+</span>
+            <div id="map" class="smallMap"></div>
+          </div>
+        </span>
+        <span id="totalDisplayContainer">
+          <div id="descriptionContainer" ng-controller="descriptionController">
+            <p id="parkName">Yosemite National Park</p>
+            <div id="descriptionContent">{{description}}</div>
+          </div>
+          <div id="tabContainer" ng-controller="toggleNavbarController">
+            <div id="navbar">
+              <div id="navbarUl">
+                <span class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
+                <span class="navbarLi" ng-click="reset(); tab2 = !tab2">Forecast</span>
+                <span class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</span>
+                <span class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</span>
+              </div>
+            </div>
+            <div id="weather" ng-controller="weatherController" ng-show="tab1">
+              <div class="today">
+                <div id="details">
+                  <span id="currTemp">Current Temp: {{todaysWeather.currTemp}}</span>
+                  <span id="todayDescription">{{todaysWeather.description}}</span>
+                  <img id="todaysWeatherIcon" src={{todaysWeather.iconLink}}>
+                  <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
+                  <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
+                </div>
+              </div>
+              <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
+                <div>
+                  <span class="forecastDate">{{day.date}}</span>
+                  <img class="forecastIcon" src={{day.iconLink}}>
+                  <span class="forcastedHigh">High: {{day.highTemp}}</span>
+                  <span class="forcastedLow">Low: {{day.lowTemp}}</span>
+                  <span class="forcastedDescription"></span>
+                </div>
+              </div>
+            </div>
+            <div id="featureContent2" ng-show="tab2">
+              <h3>Just a place holder for your awesome contents2</h3>
+            </div>
+            <div id="featureContent3" ng-show="tab3">
+              <h3>Just a place holder for your awesome contents3</h3> 
+            </div>
+            <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
+              <div ng-bind-html="textArea"></div>  
+            </div>
+            <div id="featureContent5" ng-show="tab5">
+              <h3>Just a place holder for your awesome contents5</h3> 
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
 <script>
   $( "body" ).on( "click", ".speciesTitle",function() {
@@ -128,5 +127,6 @@
       $(".AllAnimals[species!='"+currentSpecies+"']").hide(); 
       $(".AllAnimals[species='"+currentSpecies+"']").show(); 
     }
-});
+  });
 </script>
+

@@ -83,6 +83,7 @@ div, span{
     overflow: scroll;
 }
 #filterContainer{
+
     background-color: #dfdce3;
     border: solid 2px #465c8b;
     border-radius: 6px;
@@ -126,6 +127,12 @@ div, span{
     background-color: #f7ef6a;
     border-radius: 6px;
     border: 2px solid #465c8b;
+}
+#detailDisplay{
+    padding: 10px;
+}
+#detailDisplay{
+    padding: 10px;
 }
 #mapButton{
        
@@ -237,6 +244,10 @@ div, span{
 }
 .AllAnimals{
     display:none;
+}
+#tabContainer{
+    height: 50vh;
+    overflow: auto;
 }
 .speciesTitle{
     cursor: pointer;
