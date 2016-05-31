@@ -26,8 +26,8 @@ angular.module('parksAndEx.weather', [])
 
 .factory('weatherFactory', function($rootScope) {
   var apiKey = '4efbcc23711c1a198e5242ff3bd69d7a';
-  var urlTodayStart = '//api.openweathermap.org/data/2.5/weather?';
-  var urlSevenDayStart = '//api.openweathermap.org/data/2.5/forecast/daily?';
+  var urlTodayStart = 'http://api.openweathermap.org/data/2.5/weather?';
+  var urlSevenDayStart = 'http://api.openweathermap.org/data/2.5/forecast/daily?';
   
   var latitude;
   var longitude;
