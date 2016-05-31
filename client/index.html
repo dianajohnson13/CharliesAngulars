@@ -48,10 +48,11 @@
             </div>
             <div id="filterContent" >
               <ul ng-repeat="loc in locations track by $index"> <!-- sort by distance then rating-->
-                <li class="filteredItem">
-                  <div ng-click = "rerenderAll(loc.latlng.lat, loc.latlng.lng, loc.name)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. <strong>{{loc.name}}</strong></div>
-                  <div>{{loc.vicinity}}</div>
-                  <div>Rating: {{loc.rating}}</div>
+                <li >
+                  <div  ng-class="{ 'filteredItemActive': $index == selectedIndex }" class="filteredItem" ng-click = "rerenderAll( $index, loc.latlng.lat, loc.latlng.lng, loc.name)" lat={{loc.latlng.lat}} lng={{loc.latlng.lng}}>{{$index + 1}}. <strong>{{loc.name}}</strong>
+                    <div>{{loc.vicinity}}</div>
+                    <div>Rating: {{loc.rating}}</div>
+                  </div>
                 </li>
               </ul>
             </div>
