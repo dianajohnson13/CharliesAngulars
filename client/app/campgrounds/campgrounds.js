@@ -16,9 +16,9 @@ angular.module('parksAndEx.campgrounds', [])
 	    
 	
 	function ajaxCallForSpecificPark(input) {
-		var url = "http://api.amp.active.com/camping/campgrounds/?pname=" + input +"&api_key=dr4texk5yrrhvfykvcbg5zza";
-		var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=json&callback=?';
-   
+		var url = "https://api.amp.active.com/camping/campgrounds/?pname=" + input +"&api_key=dr4texk5yrrhvfykvcbg5zza";
+		var yql = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=json&callback=?';
+   	console.log(url)
 		$.ajax({
 			type: 'GET',
 			url: yql,
