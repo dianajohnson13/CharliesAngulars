@@ -46,7 +46,7 @@ angular.module('parksAndEx.weather', [])
       highTemp: Math.round(kelvinToFahrenheit(resp.main.temp_max)),
       lowTemp: Math.round(kelvinToFahrenheit(resp.main.temp_min)),
       description: resp.weather[0].description,
-      iconLink: 'http://openweathermap.org/img/w/' + resp.weather[0].icon + '.png'
+      iconLink: '//openweathermap.org/img/w/' + resp.weather[0].icon + '.png'
     });
   }
 
@@ -60,7 +60,7 @@ angular.module('parksAndEx.weather', [])
         highTemp: Math.round(kelvinToFahrenheit(day.temp.max)),
         lowTemp: Math.round(kelvinToFahrenheit(day.temp.min)),
         description: day.weather[0].description,
-        iconLink: 'http://openweathermap.org/img/w/' + day.weather[0].icon + '.png'
+        iconLink: '//openweathermap.org/img/w/' + day.weather[0].icon + '.png'
       }
     }
     $rootScope.$broadcast('sevenDayForecast', {
