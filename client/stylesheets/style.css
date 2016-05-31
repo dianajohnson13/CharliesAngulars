@@ -84,6 +84,7 @@ div, span{
     overflow: scroll;
 }
 #filterContainer{
+
     background-color: #dfdce3;
     border: solid 2px;
     border-radius: 6px;
@@ -97,10 +98,7 @@ div, span{
     background-color: #465c8b;
     color: white;
 }
-#descriptionContainer{
-    height: 50%;
-    width:100%;
-}
+
 #descriptionContent{
     height: 30VH;
     width: 98%;
@@ -112,6 +110,9 @@ div, span{
 #detailDisplay{
     padding: 20px;
     background-color: #f7ef6a;
+}
+#detailDisplay{
+    padding: 10px;
 }
 #detailDisplay{
     padding: 10px;
