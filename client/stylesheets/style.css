@@ -198,8 +198,11 @@ div, span{
     height:100%;
     width:100%;
 }
-
-/*navbar style here*/ #dfdce3
+#logoImage{
+        height: 90px;
+        float: right;
+}
+/*navbar style here #dfdce3*/ 
 
 #navbar{
     background-color: #dfdce3;
@@ -295,7 +298,6 @@ div, span{
 #campgrounds {
     padding: 20px;
     border-radius: 6px;
-    text-align: center;
 }
 
 #campgroundsTitle {
