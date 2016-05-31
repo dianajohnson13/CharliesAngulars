@@ -3,13 +3,15 @@ angular.module('parksAndEx.campgrounds', [])
 .controller('campgroundsController', function ($scope) {
 
 	$scope.$on('initial-generate', function(event, args) {
-		var formattedinput = args.split(' ').join('%20');
+		var trimmedinput = args.replace(/state/gi, "").replace(/park/gi, "").replace(/campground/gi, "").trim();
+		var formattedinput = trimmedinput.split(' ').join('%20');
 		ajaxCallForSpecificPark(formattedinput);
 		
 	});
 	$scope.$on('switch-park', function(event, args) {
 		console.log(args);
-		var formattedinput2 = args.name.split(' ').join('%20');
+		var trimmedinput2 = args.name.replace(/state/gi, "").replace(/park/gi, "").replace(/campground/gi, "").trim();
+		var formattedinput2 = trimmedinput2.split(' ').join('%20');
 		ajaxCallForSpecificPark(formattedinput2);
 	});
 
@@ -61,8 +63,8 @@ angular.module('parksAndEx.campgrounds', [])
 	
 	
 	function ajaxCallForSpecificParkDetails(contractID, parkID) {
-		var url = "http://api.amp.active.com/camping/campground/details?contractCode="+ contractID + "&parkId=" + parkID + "&api_key=dr4texk5yrrhvfykvcbg5zza";
-		var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=json&callback=?';	   
+		var url = "https://api.amp.active.com/camping/campground/details?contractCode="+ contractID + "&parkId=" + parkID + "&api_key=dr4texk5yrrhvfykvcbg5zza";
+		var yql = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=json&callback=?';	   
 		$.ajax({
 			type: 'GET',
 			url: yql,
