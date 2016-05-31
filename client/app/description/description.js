@@ -2,9 +2,11 @@ angular.module('parksAndEx.description', [])
 
 .controller('descriptionController', function($scope, descriptionFactory) {
     $scope.$on('list-set', function(event, args) {
+        $scope.parkName = args[0].name;
         descriptionFactory.generate(args[0].name, $scope);
     });
     $scope.$on('switch-park', function(event, args) {
+        $scope.parkName = args.name;
         descriptionFactory.generate(args.name, $scope);
     });
    
