@@ -4,6 +4,8 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');    
 var methodOverride = require('method-override');
 var axios = require('axios');
+var Yelp = require('./client/app/yelpReviews/yelp.js');
+
 
 var app = express();
 //mongodb to be connected once deployed with URI
@@ -36,6 +38,10 @@ var mainRouteModel = mongoose.model('mainRouteModel', {
 
 //listen(start app with node server.js)
 var port = process.env.PORT || 8080;
+
+app.post('/', function(req, res) {
+  Yelp.askYelp(req.body[0], res);
+});
 
 app.listen(port);
 
