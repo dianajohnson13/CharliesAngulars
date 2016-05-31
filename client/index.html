@@ -73,7 +73,7 @@
             <div id="tabContainer" ng-controller="toggleNavbarController">
               <div id="navbar">
                 <div id="navbarUl">
-                  <span ng-class="{ 'navbarLiSelected': tab1 }" class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
+                  <span ng-class="{ 'navbarLiSelected': tab1 }" class="navbarLi" ng-click="reset(); tab1 = !tab1">Weather</span>
                   <span ng-class="{ 'navbarLiSelected': tab3 }" class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</span>
                   <span ng-class="{ 'navbarLiSelected': tab4 }" class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</span>
                   <span ng-class="{ 'navbarLiSelected': tab5 }" class="navbarLi" ng-click="reset(); tab5 = !tab5">Campgrounds</span>
@@ -85,7 +85,6 @@
                       <div id="details">
                         <span id="currTemp">Current Temp: {{todaysWeather.currTemp}}</span>
                         <span id="todayDescription">{{todaysWeather.description}}</span>
-                        <img id="todaysWeatherIcon" src={{todaysWeather.iconLink}}/>
                         <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
                         <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
                       </div>
@@ -93,10 +92,9 @@
                   <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
                     <div>
                       <span class="forecastDate">{{day.date}}</span>
-                      <img class="forecastIcon" src={{day.iconLink}}/>
+                      <span class="forcastedDescription">{{day.description}}</span>
                       <span class="forcastedHigh">High: {{day.highTemp}}</span>
                       <span class="forcastedLow">Low: {{day.lowTemp}}</span>
-                      <span class="forcastedDescription"></span>
                     </div>
                   </div>
                 </div>
