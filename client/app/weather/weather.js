@@ -4,13 +4,9 @@ angular.module('parksAndEx.weather', [])
   $scope.sevenDayForecast;
   $scope.todaysWeather;
 
-  $scope.$on('todaysWeather', function(event, args) {
-    $scope.todaysWeather = args;
-    $scope.$apply();
-  });
-
-  $scope.$on('sevenDayForecast', function(event, args) {
+  $scope.$on('forecast', function(event, args) {
     $scope.sevenDayForecast = args.forecast;
+    $scope.todaysWeather = args.today;
     $scope.$apply();
   });
 
@@ -23,39 +19,60 @@ angular.module('parksAndEx.weather', [])
     $scope.generateWeather(args.lat, args.lng);
   });
 
-  $scope.generateWeather = function(lat, lon, handleWeather) {
-    latitude = lat;
-    longitude = lon;
-
-    servicesFactory.getWeather(37.8267,-122.423);
+  $scope.generateWeather = function(lat, lon) {
+    servicesFactory.getWeather(lat,lon);
   }
 })
 
 .factory('weatherFactory', function($rootScope) {
 
   function handleWeather(resp) {
-    console.log('handing weather', resp);
+    var today = resp.data.currently;
+    var days = resp.data.daily.data;
+    handleForecast(days, today)
   }
 
-  // function kelvinToFahrenheit(temp) {
-  //   return (temp * 9/5) - 459.67;
-  // }
+  function handleForecast(days, today){
+    var forecast = {};
+    var today = {};
+    for (var i = 0; i < days.length; i++) {
+      var day = days[i];
+      if (i > 0) {
+        forecast[i - 1] =  {
+          date: formatDate(day.time), 
+          highTemp: Math.round(day.temperatureMax),
+          lowTemp: Math.round(day.temperatureMin),
+          description: day.summary,
+          // icon: day.icon
+        }
+      } else {
+        today =  {
+          date: formatDate(day.time),
+          highTemp: Math.round(day.temperatureMax),
+          lowTemp: Math.round(day.temperatureMin),
+          description: day.summary,
+          // icon: day.icon
+        }
+      }
+    }
+    today.currTemp = today.temperature;
+    $rootScope.$broadcast('forecast', {
+      forecast: forecast,
+      today: today,
+    });
+  }
 
-  // function formatDate(timeStamp) { 
-  //   var daysOfTheWeek = {0:'Sun', 1:'Mon', 2:'Tues', 3:'Wed', 4:'Thurs', 5:'Fri', 6:'Sat'};
-  //   var date = new Date(timeStamp * 1000);
-  //   // var dayOfMonth = date.getDate();  OPTIONAL, add in if wanted
-  //   // var month = date.getMonth();
-  //   var dayOfWeek = daysOfTheWeek[date.getDay()];
-  //   return dayOfWeek;
-  // }
+
+  function formatDate(timeStamp) { 
+    var daysOfTheWeek = {0:'Sun', 1:'Mon', 2:'Tues', 3:'Wed', 4:'Thurs', 5:'Fri', 6:'Sat'};
+    var date = new Date(timeStamp * 1000);
+    // var dayOfMonth = date.getDate();  OPTIONAL, add in if wanted
+    // var month = date.getMonth();
+    var dayOfWeek = daysOfTheWeek[date.getDay()];
+    return dayOfWeek;
+  }
 
   return {
     handleWeather:handleWeather
   }
 });
-
-
-// Sample API requests:
-  // ex. seven day: 'http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=4efbcc23711c1a198e5242ff3bd69d7a'
-  // ex. todays: 'http://api.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&APPID=4efbcc23711c1a198e5242ff3bd69d7a'
