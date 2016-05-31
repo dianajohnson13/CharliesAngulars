@@ -98,6 +98,7 @@ angular.module('parksAndEx.species', ['ngSanitize'])
 
             var url = 'https://irmaservices.nps.gov/v3/rest/npspecies/fulllist/' + parkID + "/" + species[i];
             var yql = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + url + '"') + '&format=xml&callback=?';
+
             $.ajax({
                 type: 'GET',
                 url: yql,
