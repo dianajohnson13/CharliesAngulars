@@ -62,8 +62,7 @@ div, span{
 }
 #totalDisplayContainer{
     float:right;
-    width: 68%;
-    background-color: #465c8b;
+    width: 75%;
     border-radius: 6px;
 }
 #filterMapContainer{
@@ -86,7 +85,7 @@ div, span{
 #filterContainer{
 
     background-color: #dfdce3;
-    border: solid 2px;
+    border: solid 2px #465c8b;
     border-radius: 6px;
 }
 .filteredItem{
@@ -95,21 +94,39 @@ div, span{
     margin-bottom: 4px;
 }
 .filteredItem:hover {
-    background-color: #465c8b;
+    background-color: #93c978;
     color: white;
 }
-
+#descriptionContainer{
+    height: 50%;
+    width:100%;
+    border: 2px solid #465c8b;
+    border-radius: 6px;
+    padding-bottom: 10px;
+    background-color: #dfdce3;
+}
 #descriptionContent{
     height: 30VH;
-    width: 98%;
+    width: 90%;
     overflow: scroll;
     margin: 5px auto;
-    background-color: #f5f5f0;
+    padding: 20px;
+    background-color: white;
     border-radius: 6px;
 }
+#parkName {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    border-bottom: solid 1px;
+}
 #detailDisplay{
+    margin: 20px;
     padding: 20px;
     background-color: #f7ef6a;
+    border-radius: 6px;
+    border: 2px solid #465c8b;
 }
 #detailDisplay{
     padding: 10px;
@@ -150,10 +167,10 @@ div, span{
     width:100%;
 }
 
-/*navbar style here*/
+/*navbar style here*/ #dfdce3
 
 #navbar{
-    background-color: #93c178;
+    background-color: #dfdce3;
     position: relative;
     border-radius: 5px;
 }
@@ -161,13 +178,10 @@ div, span{
     position: relative;
     margin-top: 10px;
     border-radius: 6px;
-    border: solid 1px;
-    background-color: #93c178;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: inline-block;
+    border: solid 2px #465c8b;
+    background-color: #dfdce3;
+    height: 50vh;
+    overflow: auto;
 }
 #navbarUl{
     list-style-type: none;
@@ -176,15 +190,20 @@ div, span{
     margin: 0px;
 }
 .navbarLi{
-    background-color: #93c178;
+    background-color: #dfdce3;
     display: inline-block;
-    border: 2px solid;
+    border: 2px solid #465c8b;
     width: 19%;
     padding: 6px 2px 4px 2px;
     border-radius: 4px;
     border-bottom: none;
     border-right: none;
     font-weight: bold;
+}
+
+.navbarLi:hover {
+    background-color: #93c978;
+    color: white;
 }
 
 /*weather style here*/
