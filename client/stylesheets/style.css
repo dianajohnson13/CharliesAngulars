@@ -168,16 +168,6 @@ div, span{
     width: 100%;
     display: inline-block;
 }
-.navbarLi {
-    float: left;
-    border: 1px solid #000;
-    border-bottom-width: 0;
-    border-radius: 10%;
-    margin: 3px 3px 0px 3px;
-    padding: 5px 5px 0px 5px;
-    background-color: #80dfff;
-    color: black;
-}
 #navbarUl{
     list-style-type: none;
     position: relative;

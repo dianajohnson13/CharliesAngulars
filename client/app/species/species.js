@@ -115,8 +115,8 @@ angular.module('parksAndEx.species', ['ngSanitize'])
                     //console.log("--------",species[i],"--------", others);
                     let speciesName = species[i];
                     $scope.$apply(function () {
-                    $scope.textArea =  $sce.trustAsHtml($scope.textArea+"<div class='speciesHolder'><h4 class='speciesTitle'>"+species[i]+"</h4><div species = '"+speciesName+"'  class='AllAnimals'>"+others+"</div></div>") ;
-                 });
+                      $scope.textArea =  $sce.trustAsHtml($scope.textArea+"<div class='speciesHolder'><h4 class='speciesTitle'>"+species[i]+"</h4><div species = '"+speciesName+"'  class='AllAnimals'>"+others+"</div></div>") ;
+                  });
 
                 },
                 failure: function(err) {
