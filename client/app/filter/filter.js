@@ -9,6 +9,7 @@ angular.module('parksAndEx.filter', [])
 	$scope.rerenderAll = function ($index, param1, param2, name) {
 		$scope.selectedIndex = $index;
 		console.log(param1, param2);
+		$scope.newLocation(param1,param2);
 		$rootScope.$broadcast('switch-park', {
 		  lat: param1,
 		  lng: param2,
@@ -22,8 +23,14 @@ angular.module('parksAndEx.filter', [])
         	filterFactory.resize();
         	window.scrollTo(0, 0);
 
-        }
- 
+        };
+	$scope.newLocation = function(newLat,newLng) {
+		map.setCenter({
+			lat : newLat,
+			lng : newLng
+		});
+	};
+
 	
 }).factory('filterFactory', function($http) {
 	function resize(){
@@ -109,3 +116,4 @@ angular.module('parksAndEx.filter', [])
 });
 
 var input_global;
+var map;

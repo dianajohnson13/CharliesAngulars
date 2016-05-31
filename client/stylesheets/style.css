@@ -12,15 +12,20 @@ html {
     margin: 0;
     padding: 0;
 }
+#tabContentHolder{
+   overflow: auto;
+    height: 76%;
+    background-color: white;
+    border-radius: 6px;
+    margin: 2%;
+}
 #mapHolder {
     height: 300px;
     background-color: #dfdce3;
     border: solid 2px #465c8b;
     border-radius: 6px;
     padding: 10px;
-}
-#map{
-    
+    margin-top: 10px;
 }
 #popup {
     margin: 100px auto;
@@ -103,10 +108,11 @@ div, span{
     overflow: scroll;
 }
 #filterContainer{
-
+    max-height:49%;
     background-color: #dfdce3;
     border: solid 2px #465c8b;
     border-radius: 6px;
+    overflow: auto;
 }
 .filteredItem{
     padding: 5px;
@@ -123,7 +129,7 @@ div, span{
     color: white;
 }
 #descriptionContainer{
-    height: 50%;
+    max-height: 50%;
     width:100%;
     border: 2px solid #465c8b;
     border-radius: 6px;
@@ -131,7 +137,7 @@ div, span{
     background-color: #dfdce3;
 }
 #descriptionContent{
-    height: 30VH;
+    max-height: 30VH;
     width: 90%;
     overflow: scroll;
     margin: 5px auto;
@@ -173,7 +179,7 @@ div, span{
 .mapButtonEnlarged {
     float: right;
     right: 0;
-    top: 0;
+    top: -130px;
     font-size: 50px;
     border-radius: 25px;
     position: absolute;
@@ -182,17 +188,21 @@ div, span{
     }
 .fullMap{
     position: absolute !important;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    width: 100vw;
+    height: 100vh;
+    top: -135px;
+    left: -32px;
     z-index: 2;
 }
 .smallMap{
     height:100%;
     width:100%;
 }
-
-/*navbar style here*/ #dfdce3
+#logoImage{
+        height: 90px;
+        float: right;
+}
+/*navbar style here #dfdce3*/ 
 
 #navbar{
     background-color: #dfdce3;
@@ -211,6 +221,7 @@ div, span{
 #navbarUl{
     list-style-type: none;
     position: relative;
+    text-align: center;
     padding: 0px;
     margin: 0px;
 }
@@ -227,6 +238,11 @@ div, span{
 }
 
 .navbarLi:hover {
+    background-color: #93c978;
+    color: white;
+}
+
+.navbarLiSelected {
     background-color: #93c978;
     color: white;
 }
@@ -283,9 +299,8 @@ div, span{
 #campgrounds {
     padding: 20px;
     border-radius: 6px;
-    text-align: center;
 }
 
-#campgroundsTitle {
+#campgroundsTitle, #campgroundsAmenitiesTitle {
 	font-weight: bold;
 }
