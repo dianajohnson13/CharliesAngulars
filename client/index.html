@@ -71,10 +71,10 @@
           <div id="tabContainer" ng-controller="toggleNavbarController">
             <div id="navbar">
               <div id="navbarUl">
-                <span class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
-                <span class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</span>
-                <span class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</span>
-				<span class="navbarLi" ng-click="reset(); tab5 = !tab5">Campgrounds</span>
+                <span ng-class="{ 'navbarLiSelected': tab1 }" class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
+                <span ng-class="{ 'navbarLiSelected': tab3 }" class="navbarLi" ng-click="reset(); tab3 = !tab3">Reviews</span>
+                <span ng-class="{ 'navbarLiSelected': tab4 }" class="navbarLi" ng-click="reset(); tab4 = !tab4">Wildlife</span>
+				<span ng-class="{ 'navbarLiSelected': tab5 }" class="navbarLi" ng-click="reset(); tab5 = !tab5">Campgrounds</span>
               </div>
             </div>
             <div id="weather" ng-controller="weatherController" ng-show="tab1">
