@@ -67,7 +67,7 @@
                 <div id="descriptionContent">{{description}}</div>
             </div>
               <div id="tabContainer" ng-controller="toggleNavbarController">
-                 <div id="navbar">
+                <div id="navbar">
                   <div id="navbarUl">
                     <span class="navbarLi" ng-click="reset(); tab1 = !tab1">Current Weathers</span>
                     <span class="navbarLi" ng-click="reset(); tab2 = !tab2">Forecast</span>
@@ -94,9 +94,7 @@
                         <span class="forcastedDescription"></span>
                       </div>
                     </div>
-                <div id="featureContent1"  ng-show="tab1">
-                  <h3>Just a place holder for your awesome contents3</h3> 
-                </div>
+                  </div>
                 <div id="featureContent2" ng-show="tab2">
                   <h3>Just a place holder for your awesome contents2</h3>
                 </div>
@@ -106,11 +104,10 @@
                 <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
                   <div ng-bind-html="textArea"></div>  
                 </div>
-
                 <div id="featureContent5" ng-show="tab5">
                   <h3>Just a place holder for your awesome contents5</h3> 
                 </div>
-             </div>
+             
           </span>
 
         </div>
@@ -120,7 +117,6 @@
 </html>
 <script>
   $( "body" ).on( "click", ".speciesTitle",function() {
-
     var currentSpecies = $(this).text().trim();
     if($(this).attr("active") == "true"){
       $(".AllAnimals[species='"+currentSpecies+"']").hide();
