@@ -13,7 +13,11 @@ html {
     padding: 0;
 }
 #mapHolder {
-     height:300px;
+    height: 300px;
+    background-color: #dfdce3;
+    border: solid 2px #465c8b;
+    border-radius: 6px;
+    padding: 10px;
 }
 #map{
     
@@ -60,18 +64,34 @@ div, span{
 #totalContainer{
     height:100%;
 }
-#totalDisplayContainer{
+/*#totalDisplayContainer{
     float:right;
-    width: 75%;
+    width: 68%;
     border-radius: 6px;
-}
-#filterMapContainer{
+}*/
+#totalDisplayContainer {
+        /* float: right; */
+    position: absolute;
+    left: 29%;
+    width: 68%;
+    border-radius: 6px;
+    height: 100vh;
+    }
+/*#filterMapContainer{
     height: 100vh;
     float:left;
     width:30%;
     -width: 250px;
     max-width:300px;
+}*/
+
+#filterMapContainer{
+    height: 100vh;
+    max-width: 300px;
+    position: absolute;
+        width: 25%;
 }
+
 #filterContent ul{
     -list-style-type: none;
     margin:0;
@@ -92,8 +112,13 @@ div, span{
     padding: 5px;
     background-color: #dfdce3;
     margin-bottom: 4px;
+    cursor: pointer;
 }
 .filteredItem:hover {
+    background-color: #93c978;
+    color: white;
+}
+.filteredItemActive {
     background-color: #93c978;
     color: white;
 }
@@ -251,4 +276,16 @@ div, span{
 }
 .speciesTitle{
     cursor: pointer;
+}
+
+/*campgrounds style here*/
+
+#campgrounds {
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#campgroundsTitle {
+	font-weight: bold;
 }

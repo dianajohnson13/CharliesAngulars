@@ -3,15 +3,17 @@ angular.module('parksAndEx.filter', [])
 .controller('filterController', function ($scope,$rootScope, filterFactory) {
 	$scope.$on('initial-generate', function(event, args) {
     	input_global = args;
+    	$scope.selectedIndex = 0;
 		filterFactory.generate(args, $scope, $rootScope);
 	});
-	$scope.rerenderAll = function (param1, param2, name) {
+	$scope.rerenderAll = function ($index, param1, param2, name) {
+		$scope.selectedIndex = $index;
 		console.log(param1, param2);
 		$rootScope.$broadcast('switch-park', {
-      lat: param1,
-      lng: param2,
-      name:name
-    });
+		  lat: param1,
+		  lng: param2,
+		  name: name
+		});
 	};
  
 	 $scope.toggleSize = function($event){
