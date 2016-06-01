@@ -304,3 +304,24 @@ div, span{
 #campgroundsTitle, #campgroundsAmenitiesTitle {
 	font-weight: bold;
 }
+
+.aboutbox
+{
+ margin: auto;
+ position: absolute;
+ top: 50px; left: 50px; 
+ bottom: 50px; right: 50px;
+ background-color: #000;
+ color: #FFF;
+ z-index: 10;
+ display: none;
+ 
+}
+
+.about
+{
+ right: 0px;
+ position:absolute;
+ width:400px;
+ height:400px;
+}

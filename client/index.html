@@ -39,6 +39,8 @@
     </div>
     <div ng-show="searchStatus" id="detailDisplay">
     <span id="logo"> <img src="assets/logo.png"/> </span>
+	<span class="about"> About the Developers</span>
+	<span class="aboutbox"> BOX! </span>
     <img id="logoImage" src="assets/lion.png" />
     <div id="totalContainer">
       <span id="filterMapContainer" ng-controller="filterController">
@@ -147,5 +149,9 @@
             $(".AllAnimals[species!='" + currentSpecies + "']").hide();
             $(".AllAnimals[species='" + currentSpecies + "']").show();
         }
+    });
+	$('.about').bind('click', function (event) {
+    //$('.aboutbox').css('display','block');
+    $('.aboutbox').toggle();
     });
 </script>
