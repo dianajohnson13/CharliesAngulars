@@ -6,7 +6,7 @@ angular.module('parksAndEx.weather', [])
 
   $scope.$on('forecast', function(event, args) {
     $scope.sevenDayForecast = args.forecast;
-    $scope.todaysWeather = args.today;
+    $scope.todaysWeather = args.todaysWeather;
     $scope.$apply();
   });
 
@@ -34,7 +34,7 @@ angular.module('parksAndEx.weather', [])
 
   function handleForecast(days, today){
     var forecast = {};
-    var today = {};
+    var todaysWeather = {};
     for (var i = 0; i < days.length; i++) {
       var day = days[i];
       if (i > 0) {
@@ -46,7 +46,7 @@ angular.module('parksAndEx.weather', [])
           // icon: day.icon
         }
       } else {
-        today =  {
+        todaysWeather =  {
           date: formatDate(day.time),
           highTemp: Math.round(day.temperatureMax),
           lowTemp: Math.round(day.temperatureMin),
@@ -55,10 +55,10 @@ angular.module('parksAndEx.weather', [])
         }
       }
     }
-    today.currTemp = today.temperature;
+    todaysWeather.currTemp = Math.round(today.temperature);
     $rootScope.$broadcast('forecast', {
       forecast: forecast,
-      today: today,
+      todaysWeather: todaysWeather,
     });
   }
 
