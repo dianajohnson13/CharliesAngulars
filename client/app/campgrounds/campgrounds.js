@@ -31,16 +31,18 @@ angular.module('parksAndEx.campgrounds', [])
 				console.log(data);
 				var contractID;
 				var parkID;
-				if (Array.isArray(data.query.results.resultset.result)) {
+				
+				if (!data.query.results || data.query.results.resultset.result === undefined) {
+				$scope.hideCampgrounds = true;
+				$scope.$apply();
+				}
+				else if (Array.isArray(data.query.results.resultset.result)) {
 					contractID = data.query.results.resultset.result[0].contractID;
 					parkID = data.query.results.resultset.result[0].facilityID;
 					$scope.hideCampgrounds = false;
 					ajaxCallForSpecificParkDetails(contractID,parkID);
 				} 
-				else if (data.query.results.resultset.result === undefined) {
-				$scope.hideCampgrounds = true;
-				$scope.$apply();
-				}
+				
 				else if (typeof data.query.results.resultset.result === 'object') {
 					contractID = data.query.results.resultset.result.contractID;
 					parkID = data.query.results.resultset.result.facilityID;

@@ -26,8 +26,8 @@ angular.module('parksAndEx.yelpReviews',[])
       if (term) {
         $http.post('/', [term])
         .then(function(response) {
-          response.data.phone = formatPhone(response.data.phone);
           parks.push(response.data);
+          response.data.phone = formatPhone(response.data.phone);
           console.log(data);
           console.log(response.data);
         }

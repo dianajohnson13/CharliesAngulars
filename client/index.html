@@ -211,6 +211,15 @@
             $(".AllAnimals[species='" + currentSpecies + "']").show();
         }
     });
+
+  $(document).ready(function(){
+    $('#location').keypress(function(e){
+      if(e.keyCode === 13 && $('#location').val().length>0)
+      $('#searchButton').click();
+    });
+  });
+
+
 	$('.about').bind('click', function (event) {
     //$('.aboutbox').css('display','block');
     $('.aboutbox').toggle();
