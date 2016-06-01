@@ -55,7 +55,7 @@ angular.module('parksAndEx.weather', [])
         }
       }
     }
-    todaysWeather.currTemp = today.temperature;
+    todaysWeather.currTemp = Math.round(today.temperature);
     $rootScope.$broadcast('forecast', {
       forecast: forecast,
       todaysWeather: todaysWeather,
