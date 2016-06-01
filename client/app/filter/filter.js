@@ -78,7 +78,7 @@ angular.module('parksAndEx.filter', [])
 		$scope = scope;
 		$rootScope = rootScope;
 		var formattedInput = input.split(' ').join('%20');
-		httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + formattedInput + '&key=AIzaSyAvP71A4zQ3bBjri75-1y6AaLP3s-JfNO0', handleLocation);
+		httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + formattedInput + '&key=AIzaSyDKeHM_744qVGcwOTO3tXB5EgRiYwX-1fI', handleLocation);
 	};
 	function handleLocation(input) {
 		

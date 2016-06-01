@@ -40,7 +40,68 @@
     <div ng-show="searchStatus" id="detailDisplay">
     <span id="logo"> <img src="assets/logo.png"/> </span>
 	<span class="about"> About the Developers</span>
-	<span class="aboutbox"> BOX! </span>
+	<span class="aboutbox"> <div id="everything">
+
+<div class="entireBox">
+  <div class="content">
+    <div class="topSection">
+      <img class="profImage" src="assets/ben.jpg" alt=""/>
+      <h3 class="name">Ben Chen</h3>
+      <h3 class="function">Product Owner</h3>
+      <div class="links">
+        <a href="https://github.com/byc219"><i class="github"><img class="leftImage socialIcon" src="assets/github.png"/></i></a>
+        <a href="https://www.linkedin.com/in/benychen" class="center"><i class="linkedin"><img class="centerImage socialIcon" src="assets/linkedin.png"/></i></a>
+        <a href="https://www.instagram.com/benchen90/"><i class="instagram"><img class="rightImage socialIcon" src="assets/instagram.gif"/></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="entireBox">
+  <div class="content">
+    <div class="topSection">
+      <img class="profImage"  src="assets/michael.jpg" alt="">
+      <h3 class="name">Michael Chen</h3>
+      <h3 class="function">Development</h3>
+      <div class="links">
+        <a href="https://github.com/metamonkey8"><i class="github"><img class="leftImage socialIcon" src="assets/github.png"/></i></a>
+        <a href="www.linkedin.com/in/michaelchen8888" class="center"><i class="linkedin"><img class="centerImage socialIcon" src="assets/linkedin.png"/></i></a>
+        <a href="https://instagram.com/"><i class="instagram"><img class="rightImage socialIcon" src="assets/instagram.gif"/></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="entireBox">
+  <div class="content">
+    <div class="topSection">
+      <img src="assets/diana.jpg" class="profImage"  alt="">
+      <h3 class="name">Diana Johnson</h3>
+      <h3 class="function">Scrum Master</h3>
+      <div class="links">
+        <a href="https://github.com/dianajohnson13"><i class="github"><img class="leftImage socialIcon" src="assets/github.png"/></i></a>
+        <a href="https://www.linkedin.com/in/dianajohnson13" class="center"><i class="linkedin"><img class="centerImage socialIcon" src="assets/linkedin.png"/></i></a>
+        <a href="https://instagram.com/"><i class="instagram"><img class="rightImage socialIcon" src="assets/instagram.gif"/></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="entireBox">
+  <div class="content">
+    <div class="topSection">
+      <img class="profImage"  src="assets/bo.jpg" alt="">
+      <h3 class="name">Bo Yao</h3>
+    <h3 class="function">Development</h3>
+      <div class="links">
+        <a href="https://github.com/Boyaohrbc"><i class="github"><img class="leftImage socialIcon" src="assets/github.png"/></i></a>
+        <a href="https://www.linkedin.com/in/boyuyao" class="center"><i class="linkedin"><img class="centerImage socialIcon" src="assets/linkedin.png"/></i></a>
+        <a href="https://instagram.com/"><i class="instagram"><img class="rightImage socialIcon" src="assets/instagram.gif"/></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div></span>
     <img id="logoImage" src="assets/lion.png" />
     <div id="totalContainer">
       <span id="filterMapContainer" ng-controller="filterController">
@@ -82,15 +143,15 @@
                 <div id="weather" ng-controller="weatherController" ng-show="tab1">
                     <div class="today">
                       <div id="details">
-                        <span id="currTemp">Current Temp: {{todaysWeather.currTemp}}</span>
+                        <span id="currTemp"><strong>Current Temp</strong>: {{todaysWeather.currTemp}}</span>
                         <span id="todayDescription">{{todaysWeather.description}}</span>
-                        <span id="todayMax">Max: {{todaysWeather.highTemp}}</span>
-                        <span id="todayMin">Min: {{todaysWeather.lowTemp}}</span>
+                        <span id="todayMax"><strong>Max:</strong> {{todaysWeather.highTemp}}</span>
+                        <span id="todayMin"><strong>Min:</strong> {{todaysWeather.lowTemp}}</span>
                       </div>
                     </div>
-                  <div id="sevenDayforcast" ng-repeat="day in sevenDayForecast">
+                  <div class="sevenDayforcast" ng-repeat="day in sevenDayForecast">
                     <div>
-                      <span class="forecastDate">{{day.date}}</span>
+                      <span class="forecastDate"><strong>{{day.date}}</strong></span>
                       <span class="forcastedDescription">{{day.description}}</span>
                       <span class="forcastedHigh">High: {{day.highTemp}}</span>
                       <span class="forcastedLow">Low: {{day.lowTemp}}</span>

@@ -18,27 +18,28 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
-
+Parks and Exploration
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+Nature lovers, researchers, scientists, botanists, charles darwin
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+Parks and Exploration is a full service, one stop show nature research hub. It provides information about a park, information about it wildlife, camping info and so much more!
 ## Problem ##
   > Describe the problem your product solves.
-
+convenice of organizng many park/camping related info together
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+in a very organized single page layout a user can visualize all info streams at once
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+"we used a myriad of park related resources to provide a fun, convenient and effective way to deliver all relevent content to our users in one convenient frame"
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+So easy. too easy.
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+"I throughly enjoyed using Parks and Exploration. I was quickly able to find out everything i needed to book a perfect family vacation. My life is much better now. Thanks for making my life better!" 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+"No where. Stay on our site forever!"
