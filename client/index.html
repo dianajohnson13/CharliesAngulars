@@ -21,10 +21,7 @@
     <script src="app/campgrounds/campgrounds.js"></script>
     <script src="assets/park_category.js"></script>
     <script src="app/weather/weather.js"></script>
-
-    <!--     <script src='assets/maps_api.js'></script>
- 
--->
+    <script src="app/yelpReviews/yelpCtrl.js"></script>
     <script src="app/toggleNavbar/toggleNavbar.js"></script>
 
 </head>
@@ -98,11 +95,15 @@
                     </div>
                   </div>
                 </div>
-                <div id="featureContent2" ng-show="tab2">
-                  <h3>Just a place holder for your awesome contents2</h3>
-                </div>
-                <div id="featureContent3" ng-show="tab3">
-                  <h3>Just a place holder for your awesome contents3</h3>
+                <div id="reviews" ng-controller="yelpController" ng-show="tab3">
+                  <div class="allReviews" ng-repeat="park in parks">
+                    <div class="reviewData">
+                      <img class="thumbnail" ng-src="{{park.image_url}}">
+                      <h3>{{park.name}}</h3>
+                      <p class="phone">{{park.phone}}</p>
+                      <p>{{park.snippet_text}} <a class="yelp_link" ng-href="{{park.url}}">Read More</a></p>
+                    </div> 
+                  </div>
                 </div>
                 <div id="featureContent4" ng-controller="speciesController" ng-show="tab4">
                     <div ng-bind-html="textArea"></div>
