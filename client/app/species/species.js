@@ -93,7 +93,7 @@ angular.module('parksAndEx.species', ['ngSanitize'])
         }
         var xml2json = new XMLtoJSON();
         $scope.textArea = "";
-        for (let i = 0; i < species.length; i++) {
+        for (var i = 0; i < species.length; i++) {
             //var others = "";
 
             var url = 'https://irmaservices.nps.gov/v3/rest/npspecies/fulllist/' + parkID + "/" + species[i];
@@ -120,7 +120,7 @@ angular.module('parksAndEx.species', ['ngSanitize'])
 
                     }
                     //console.log("--------",species[i],"--------", others);
-                    let speciesName = species[i];
+                    var speciesName = species[i];
                     $scope.$apply(function() {
                         $scope.textArea = $sce.trustAsHtml($scope.textArea + "<div class='speciesHolder'><h4 class='speciesTitle'>" + species[i] + "</h4><div species = '" + speciesName + "'  class='AllAnimals'>" + others + "</div></div>");
                     });
