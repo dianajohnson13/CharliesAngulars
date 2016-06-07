@@ -32,8 +32,6 @@ angular.module('parksAndEx.description', [])
                     content = content?content:"Sorry, No description found! But It doesnt mean you shouldn't check out "+args
                     $scope.description = content;
                 });
-                //console.log($scope.description);
-
             },
             failure: function(err) {
                 console.log("ERR", err);

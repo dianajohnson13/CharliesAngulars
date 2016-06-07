@@ -1,11 +1,10 @@
 angular.module('parksAndEx.homescreen', [])
 
 .controller('homescreenController', function($scope, $rootScope, homescreenFactory, $location) {
-  //$scope.test = mainFactory.getText();
+  
   $scope.searchStatus = false;
 
   $scope.submitSearch = function(input){
-    console.log(input)
   	var filtered = homescreenFactory.filter(input);
   	if(filtered){
 	  	$scope.searchStatus = true;
