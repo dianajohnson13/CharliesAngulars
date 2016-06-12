@@ -23,11 +23,7 @@
     "bower": "^1.7.9",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "grunt": "^1.0.1",
     "method-override": "^2.3.5",
-    "mongoose": "^4.4.17",
-    "morgan": "^1.7.0",
-    "q": "^1.4.1",
     "request": "^2.72.0",
     "yelp": "^1.0.1"
   }

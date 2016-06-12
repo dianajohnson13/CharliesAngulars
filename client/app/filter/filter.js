@@ -6,10 +6,11 @@ angular.module('parksAndEx.filter', [])
     	$scope.selectedIndex = 0;
 		filterFactory.generate(args, $scope, $rootScope);
 	});
+
 	$scope.rerenderAll = function ($index, param1, param2, name) {
 		$scope.selectedIndex = $index;
-		console.log(param1, param2);
 		$scope.newLocation(param1,param2);
+
 		$rootScope.$broadcast('switch-park', {
 		  lat: param1,
 		  lng: param2,
@@ -17,13 +18,13 @@ angular.module('parksAndEx.filter', [])
 		});
 	};
  
-	 $scope.toggleSize = function($event){
-        	$("#map").toggleClass("smallMap fullMap");
-        	$("#mapButton").toggleClass("mapButtonMini mapButtonEnlarged");
-        	filterFactory.resize();
-        	window.scrollTo(0, 0);
+	$scope.toggleSize = function($event){
+  	$("#map").toggleClass("smallMap fullMap");
+  	$("#mapButton").toggleClass("mapButtonMini mapButtonEnlarged");
+  	filterFactory.resize();
+  	window.scrollTo(0, 0);
+  };
 
-        };
 	$scope.newLocation = function(newLat,newLng) {
 		map.setCenter({
 			lat : newLat,
@@ -35,7 +36,7 @@ angular.module('parksAndEx.filter', [])
 }).factory('filterFactory', function($http) {
 	function resize(){
     google.maps.event.trigger(map, "resize");
-  	}
+  };
  	var $scope = null;
  	var $rootScope = null;
 	function callbackFn(results, status) {
@@ -55,7 +56,7 @@ angular.module('parksAndEx.filter', [])
 		}
 		$scope.locations = results;
 		$rootScope.$broadcast('list-set', results);
-		console.log(results);
+		
 		$scope.$apply();
 		  for (var i = 0; i < results.length; i++) {
 			createMarker(results[i]);
@@ -80,8 +81,8 @@ angular.module('parksAndEx.filter', [])
 		var formattedInput = input.split(' ').join('%20');
 		httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?address=' + formattedInput + '&key=AIzaSyDKeHM_744qVGcwOTO3tXB5EgRiYwX-1fI', handleLocation);
 	};
+
 	function handleLocation(input) {
-		
 		var inputJSON = JSON.parse(input);
 		if (!inputJSON.results.length) {
 			return false;
@@ -99,8 +100,7 @@ angular.module('parksAndEx.filter', [])
 		  type: ['park']
 		}, callbackFn);
 	};
-	function httpGetAsync(theUrl, callback)
-	{
+	function httpGetAsync(theUrl, callback) {
 		var xmlHttp = new XMLHttpRequest();
 		xmlHttp.onreadystatechange = function() { 
 			if (xmlHttp.readyState == 4 && xmlHttp.status == 200)

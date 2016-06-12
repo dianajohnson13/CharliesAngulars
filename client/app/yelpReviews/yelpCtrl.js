@@ -5,7 +5,7 @@ angular.module('parksAndEx.yelpReviews',[])
 
   $scope.$on('list-set', function(event, args) {
     var loc = args[0].latlng;
-    console.log(args[0]);
+    
     getParks.postToServer([{name: args[0].name, lat: loc.lat, lng: loc.lng}]);
   });
   $scope.$on('switch-park', function(event, args) {
@@ -28,8 +28,6 @@ angular.module('parksAndEx.yelpReviews',[])
         .then(function(response) {
           parks.push(response.data);
           response.data.phone = formatPhone(response.data.phone);
-          console.log(data);
-          console.log(response.data);
         }
         ,function() {
           console.log("fail");

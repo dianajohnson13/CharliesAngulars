@@ -16,7 +16,7 @@ angular.module('parksAndEx.description', [])
     var descriptionContent = "--";
 
     function getDescription(argsinput, $scope) {
-        let args = argsinput;
+        var args = argsinput;
         var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + args.trim().split(" ").join("%20");
         $.ajax({
             type: 'GET',
@@ -32,8 +32,6 @@ angular.module('parksAndEx.description', [])
                     content = content?content:"Sorry, No description found! But It doesnt mean you shouldn't check out "+args
                     $scope.description = content;
                 });
-                //console.log($scope.description);
-
             },
             failure: function(err) {
                 console.log("ERR", err);
