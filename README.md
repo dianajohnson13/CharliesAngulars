@@ -20,7 +20,7 @@
 
 ## Usage
 
-> Want to visit a park, but don't know where to go? Simply go to Parks and Exploration, enter a location, and scroll through our list of nearby options. Checkout a park descriotions, forecasted weather, local wildlife, park reviews, campgrounds, and an expandable map of the area. 
+> Want to visit a park, but don't know where to go? Simply go to Parks and Exploration, enter a location, and scroll through our list of nearby options. Checkout a park descriptions, forecasted weather, local wildlife, park reviews, campgrounds, and an expandable map of the area. 
 
 ## Requirements
 
