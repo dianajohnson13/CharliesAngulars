@@ -1,12 +1,12 @@
-# Greenfield Park
+# Parks and Exploration
 
-> Strong suave project description
+> A Park Searching Website
 
 ## Team
 
   - __Product Owner__: Ben Chen
   - __Scrum Master__: Diana Johnson
-  - __Development Team Members__: Bo Yao, Michael Chen
+  - __Development Team__: Bo Yao, Michael Chen, Ben Chen, Diana Johnson
 
 ## Table of Contents
 
@@ -20,15 +20,12 @@
 
 ## Usage
 
-> Some usage instructions
+> Want to visit a park, but don't know where to go? Simply go to Parks and Exploration, enter a location, and scroll through our list of nearby options. Checkout a park descriotions, forecasted weather, local wildlife, park reviews, campgrounds, and an expandable map of the area. 
 
 ## Requirements
 
 - Node / Express
 - Angular
-- Mongo
-- Mongoose
-- etc
 
 ## Development
 
@@ -37,15 +34,8 @@
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
 npm install
-bower install
 ```
-
-### Roadmap
-
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
-
 
 ## Contributing
 
