@@ -1,10 +1,10 @@
 var Yelp = require('yelp');
 
 var yelp = new Yelp({
-  consumer_key:'ju7T0GatX3G3terGQa8qAg',
-  consumer_secret:'xxqTDZc8wGUxCcvzxgaVaRKeGY8',
-  token:'gxrjr6yGaAU1JdL6_vkrZKmZotKPR5MB',
-  token_secret:'llPjIOyzunVJmtsmfyh-IhsqzgQ'
+  consumer_key:'HvPDlRE2SFhi8cH_SsVeSA',
+  consumer_secret:'HjwFZXQ4MHiaEb3OhgwDBOxUTU4',
+  token:'ccNDHzbuzAUNIYztfybVYNaAPtg1NAgs',
+  token_secret:'vumbjNRjf8h_qGEorbiiOfHNilc'
 });
 
 var choose = function(data) {
